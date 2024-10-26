@@ -1,0 +1,26 @@
+{
+  "name": "tdd-calc",
+  "version": "1.0.0",
+  "description": "Build a simple HTML calculator using test-driven development",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/tdd-calc.git"
+  },
+  "keywords": [
+    "cypress",
+    "cypress-example"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "private",
+  "bugs": {
+    "url": "https://github.com/bahmutov/tdd-calc/issues"
+  },
+  "homepage": "https://github.com/bahmutov/tdd-calc#readme",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
