@@ -32,8 +32,13 @@ describe('Calculator', () => {
     // confirm there is the correct number of buttons
     // https://on.cypress.io/get
     // https://on.cypress.io/should
-    //
+    cy.get('#buttons button').should('have.length', labels.length)
     // check that there is a button element with the matching label
     // https://on.cypress.io/contains
+    cy.get('#buttons').within(() => {
+      labels.forEach((label) => {
+        cy.contains('button', label)
+      })
+    })
   })
 })
