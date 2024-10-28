@@ -8,3 +8,11 @@ function enterDigit(digit) {
   const display = document.getElementById('display')
   display.innerText += digit
 }
+
+/**
+ * Clears the current display text
+ */
+function clearDisplay() {
+  const display = document.getElementById('display')
+  display.innerText = ''
+}

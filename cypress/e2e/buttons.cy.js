@@ -46,8 +46,30 @@ describe('Calculator', () => {
     cy.visit('public/index.html')
     // enter a few digits like this expression
     const expression = '123'
+    expression.split('').forEach((char) => {
+      cy.contains('button', char).click()
+    })
     // confirm the display is showing the entered expression
+    cy.get('#display').should('have.text', expression)
     // press the button "C"
+    cy.contains('button', 'C').click()
     // confirm the display is cleared
+    cy.get('#display').should('have.text', '')
+  })
+
+  it('calls the clearDisplay global function', () => {
+    cy.visit('public/index.html')
+    cy.contains('4').click()
+    cy.get('#display').should('have.text', '4')
+    // spy on the global function "clearDisplay"
+    // Tip: every global function is attached to the "window" object
+    // https://on.cypress.io/window
+    // https://on.cypress.io/spy
+    // give the spy an alias "clear"
+    // https://on.cypress.io/as
+    // Hint: https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html
+    // perform the action through the UI
+    cy.contains('button', 'C').click()
+    // confirm the spy "clear" was called once
   })
 })
