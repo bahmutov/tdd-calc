@@ -23,7 +23,10 @@ describe('Calculator', () => {
     const expression = '123+456'
     // split the expression into individual characters
     // and click the corresponding button
-    //
+    expression.split('').forEach((char) => {
+      cy.contains('button', char).click()
+    })
     // confirm the display shows the whole expression
+    cy.get('#display').should('have.text', expression)
   })
 })
