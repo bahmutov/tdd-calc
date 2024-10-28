@@ -50,9 +50,11 @@ describe('Calculator', () => {
     // a custom Cypress command
     // cy.enterExpression(expression)
     // defined in the "cypress/support/e2e.js"
-    expression.split('').forEach((char) => {
-      cy.contains('button', char).click()
-    })
+    // expression.split('').forEach((char) => {
+    //   cy.contains('button', char).click()
+    // })
+    cy.enterExpression(expression)
+
     // confirm the display is showing the entered expression
     cy.get('#display').should('have.text', expression)
     // press the button "C"
