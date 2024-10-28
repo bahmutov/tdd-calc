@@ -20,5 +20,9 @@ describe('Calculator', () => {
     // https://on.cypress.io/find
     // https://on.cypress.io/within
     // one solution
+    cy.get('#calculator').within(() => {
+      cy.get('#display')
+      cy.get('#buttons')
+    })
   })
 })
