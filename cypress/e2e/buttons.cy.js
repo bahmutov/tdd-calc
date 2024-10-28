@@ -46,13 +46,6 @@ describe('Calculator', () => {
     cy.visit('public/index.html')
     // enter a few digits like this expression
     const expression = '123'
-    // replace the custom code with the call to
-    // a custom Cypress command
-    // cy.enterExpression(expression)
-    // defined in the "cypress/support/e2e.js"
-    // expression.split('').forEach((char) => {
-    //   cy.contains('button', char).click()
-    // })
     cy.enterExpression(expression)
 
     // confirm the display is showing the entered expression
