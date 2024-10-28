@@ -41,4 +41,13 @@ describe('Calculator', () => {
       })
     })
   })
+
+  it('clears the display', () => {
+    cy.visit('public/index.html')
+    // enter a few digits like this expression
+    const expression = '123'
+    // confirm the display is showing the entered expression
+    // press the button "C"
+    // confirm the display is cleared
+  })
 })
