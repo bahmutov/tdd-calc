@@ -25,3 +25,20 @@ $ npx cypress open
 ```
 
 Then follow the lesson prompts from [the course](https://cypress.tips/courses/tdd-calculator)
+
+## Branches
+
+| Branch | Lesson                                                                                                   |
+| ------ | -------------------------------------------------------------------------------------------------------- |
+| `a1`   | [Lesson a1: Add HTML page](https://cypress.tips/courses/tdd-calculator/lessons/a1)                       |
+| `a2`   | [Lesson a2: Add the main calculator elements](https://cypress.tips/courses/tdd-calculator/lessons/a2)    |
+| `a3`   | [Lesson a3: Page resources](https://cypress.tips/courses/tdd-calculator/lessons/a3)                      |
+| `a4`   | [Lesson a4: Add buttons](https://cypress.tips/courses/tdd-calculator/lessons/a4)                         |
+| `a5`   | [Lesson a5: Enter numbers](https://cypress.tips/courses/tdd-calculator/lessons/a5)                       |
+| `a6`   | [Lesson a6: Enter expressions](https://cypress.tips/courses/tdd-calculator/lessons/a6)                   |
+| `b1`   | [Lesson b1: Re-run tests on application changes](https://cypress.tips/courses/tdd-calculator/lessons/b1) |
+| `b2`   | [Lesson b2: Clear the current expression](https://cypress.tips/courses/tdd-calculator/lessons/b2)        |
+
+## Small print
+
+Copyright 2024 ©️ Gleb Bahmutov
