@@ -29,4 +29,17 @@ describe('Calculator', () => {
     // confirm the display shows the whole expression
     cy.get('#display').should('have.text', expression)
   })
+
+  it('is visible when empty', () => {
+    cy.visit('public/index.html')
+    // confirm the display element has no text
+    // but is still visible
+    // https://on.cypress.io/get
+    // https://glebbahmutov.com/cypress-examples/recipes/is-visible.html
+    //
+    // enter an expression
+    //
+    // and confirm the display font size is 80px
+    // https://glebbahmutov.com/cypress-examples/recipes/check-style.html
+  })
 })

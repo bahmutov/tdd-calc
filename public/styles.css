@@ -1,1 +1,14 @@
 /* calculator styles */
+
+#calculator {
+  max-width: 500px;
+  overflow: hidden;
+}
+
+#display {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+}
