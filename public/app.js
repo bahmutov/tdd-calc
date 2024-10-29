@@ -30,6 +30,7 @@ function appendDot(expression) {
  */
 function enterDigit(digit) {
   const display = document.getElementById('display')
+
   if (digit === '.') {
     // special logic for adding the "." character
     display.innerText = appendDot(display.innerText)
@@ -43,7 +44,22 @@ function enterDigit(digit) {
  * using the `eval` function and replace the display text with the result
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
  */
-function calculate() {}
+function calculate() {
+  const display = document.getElementById('display')
+  const expression = display.innerText
+
+  // check the expression to be a simple numerical expression
+  // without any extra characters
+  // we only allow the following characters
+  // digits, "+", "-", "*", "/", "."
+
+  try {
+    const result = eval(expression)
+    display.innerText = result
+  } catch (err) {
+    display.innerText = 'ERROR'
+  }
+}
 
 /**
  * Clears the current display text
