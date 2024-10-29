@@ -52,6 +52,10 @@ function calculate() {
   // without any extra characters
   // we only allow the following characters
   // digits, "+", "-", "*", "/", "."
+  if (!/^[\d\-\+\*\/\.]+?$/.test(expression)) {
+    display.innerText = 'INVALID'
+    return
+  }
 
   try {
     const result = eval(expression)

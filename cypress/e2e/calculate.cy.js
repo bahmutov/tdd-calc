@@ -33,7 +33,12 @@ describe('Calculator', () => {
     // of the application's window object
     // https://on.cypress.io/window
     // https://on.cypress.io/spy
-    //
+    cy.window()
+      .its('console')
+      .then((console) => {
+        // give the spy an alias "consoleLog"
+        cy.spy(console, 'log').as('consoleLog')
+      })
     // "enter" a non-numeric expression
     // into the display element by setting its text
     // https://on.cypress.io/get
@@ -41,13 +46,16 @@ describe('Calculator', () => {
     // Tip: cy.get yields a jQuery object
     // which has method "text"
     // https://api.jquery.com/text/
-    //
+    cy.get('#display').invoke('text', expression)
     // click the "=" button
-    //
+    cy.contains('#buttons button', '=').click()
     // confirm the "console.log" method was NOT called
     // https://on.cypress.io/get
     // Tip: use short timeout to avoid waiting for the default 4 seconds
-    //
+    cy.get('@consoleLog', { timeout: 100 }).should(
+      'not.have.been.called',
+    )
     // confirm the display shows "INVALID"
+    cy.get('#display').should('have.text', 'INVALID')
   })
 })
