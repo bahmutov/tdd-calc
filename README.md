@@ -43,6 +43,10 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `b5`   | [Lesson b5: Decimal point happy paths](https://cypress.tips/courses/tdd-calculator/lessons/b5)           |
 | `b6`   | [Lesson b6: Decimal edge cases](https://cypress.tips/courses/tdd-calculator/lessons/b6)                  |
 | `b7`   | [Lesson b7: Unit tests](https://cypress.tips/courses/tdd-calculator/lessons/b7)                          |
+| `c1`   | [Lesson c1: Calculate the expression](https://cypress.tips/courses/tdd-calculator/lessons/c1)            |
+| `c2`   | [Lesson c2: Invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c2)                 |
+| `c3`   | [Lesson c3: Do not evaluate invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c3) |
+| `c4`   | [Lesson c4: Style the display element](https://cypress.tips/courses/tdd-calculator/lessons/c4)           |
 
 ## Small print
 
