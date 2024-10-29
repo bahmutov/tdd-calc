@@ -7,8 +7,17 @@
 
 #display {
   width: 100%;
+  padding: 20px;
+  height: 80px;
+  font-size: 80px;
   text-align: left;
   border: none;
   background-color: hsl(0, 0%, 20%);
   color: white;
+}
+
+#buttons {
+  /* use CSS grid to place all buttons into 4 columns */
+  /* use 10 pixel gap between the items */
+  /* and put some padding around the buttons */
 }

@@ -36,10 +36,39 @@ describe('Calculator', () => {
     // but is still visible
     // https://on.cypress.io/get
     // https://glebbahmutov.com/cypress-examples/recipes/is-visible.html
-    //
+    cy.get('#display').should('have.text', '').and('be.visible')
     // enter an expression
-    //
+    cy.enterExpression('1+2')
     // and confirm the display font size is 80px
     // https://glebbahmutov.com/cypress-examples/recipes/check-style.html
+    cy.get('#display').should('have.css', 'fontSize', '80px')
+  })
+
+  it('has a grid of buttons', () => {
+    cy.visit('public/index.html')
+    // confirm the calculator has 17 buttons
+    //
+    // how would you check that the buttons are arranged
+    // in a grid? The grid should have 5 rows like this:
+    // "+" 7 8 9
+    // "-" 4 5 6
+    // "*" 1 2 3
+    // "/" 0 . =
+    // "C"
+    // let's confirm the first row has the same "top offset" prop
+    const firstRow = ['+', '7', '8', '9']
+    const secondRow = ['-', '4', '5', '6']
+    // get the first button's "top offset"
+    // https://on.cypress.io/contains
+    // https://glebbahmutov.com/cypress-examples/recipes/layout-shift.html
+    // pass the "top offset" to the next "then" callback
+    // https://on.cypress.io/then
+    // confirm each button in the first row has the same "top offset"
+    //
+    // confirm the second row has larger "top offset"
+    // than the offset of the first button
+    //
+    // similarly to the first row,
+    // confirm the first column has the same "left offset"
   })
 })
