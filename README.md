@@ -38,6 +38,11 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `a6`   | [Lesson a6: Enter expressions](https://cypress.tips/courses/tdd-calculator/lessons/a6)                   |
 | `b1`   | [Lesson b1: Re-run tests on application changes](https://cypress.tips/courses/tdd-calculator/lessons/b1) |
 | `b2`   | [Lesson b2: Clear the current expression](https://cypress.tips/courses/tdd-calculator/lessons/b2)        |
+| `b3`   | [Lesson b3: Spy on global application functions](https://cypress.tips/courses/tdd-calculator/lessons/b3) |
+| `b4`   | [Lesson b4: Add a custom command](https://cypress.tips/courses/tdd-calculator/lessons/b4)                |
+| `b5`   | [Lesson b5: Decimal point happy paths](https://cypress.tips/courses/tdd-calculator/lessons/b5)           |
+| `b6`   | [Lesson b6: Decimal edge cases](https://cypress.tips/courses/tdd-calculator/lessons/b6)                  |
+| `b7`   | [Lesson b7: Unit tests](https://cypress.tips/courses/tdd-calculator/lessons/b7)                          |
 
 ## Small print
 
