@@ -75,4 +75,27 @@ describe('Calculator', () => {
     // confirm the spy "clear" was called once
     cy.get('@clear').should('have.been.calledOnce')
   })
+
+  it('has round buttons', () => {
+    cy.visit('public/index.html')
+    // confirm the first button is 100px by 100px
+    cy.log('**width**')
+    // first check the width CSS property
+    // using the "have.css" assertion
+    // https://on.cypress.io/get
+    // https://on.cypress.io/first
+    //
+    // note: the computed layout might be different
+    // and not be exactly 100px
+    // You probably need to confirm "99.99991px"
+    // to a number first, then use "closeTo" assertion
+    // https://glebbahmutov.com/cypress-examples/recipes/same-height.html
+    //
+    // next, check the height CSS property
+    cy.log('**height**')
+    //
+    // confirm the buttons are round
+    // by checking their border radius
+    cy.log('**border radius**')
+  })
 })

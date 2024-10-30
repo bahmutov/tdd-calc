@@ -25,3 +25,13 @@
   gap: 10px;
   padding: 25px;
 }
+
+button {
+  /* make each button a circle with 100px diameter */
+  border: none;
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
