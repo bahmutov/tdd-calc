@@ -51,3 +51,7 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+
+.operator-btn {
+  background-color: hsl(35, 100%, 55%);
+}

@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Calculator', () => {
   it('has all necessary buttons', () => {
     cy.visit('public/index.html')
@@ -47,7 +45,6 @@ describe('Calculator', () => {
     // enter a few digits like this expression
     const expression = '123'
     cy.enterExpression(expression)
-
     // confirm the display is showing the entered expression
     cy.get('#display').should('have.text', expression)
     // press the button "C"
@@ -84,19 +81,29 @@ describe('Calculator', () => {
     // using the "have.css" assertion
     // https://on.cypress.io/get
     // https://on.cypress.io/first
-    //
-    // note: the computed layout might be different
-    // and not be exactly 100px
-    // You probably need to confirm "99.99991px"
-    // to a number first, then use "closeTo" assertion
-    // https://glebbahmutov.com/cypress-examples/recipes/same-height.html
-    //
+    cy.get('#buttons button')
+      .first()
+      // note: the computed layout might be different
+      // and not be exactly 100px
+      // You probably need to confirm "99.99991px"
+      // to a number first, then use "closeTo" assertion
+      // https://glebbahmutov.com/cypress-examples/recipes/same-height.html
+      .should('have.css', 'width')
+      .then(parseFloat)
+      .should('be.closeTo', 100, 0.1)
     // next, check the height CSS property
     cy.log('**height**')
-    //
+    cy.get('#buttons button')
+      .first()
+      .should('have.css', 'height')
+      .then(parseFloat)
+      .should('be.closeTo', 100, 0.1)
     // confirm the buttons are round
     // by checking their border radius
     cy.log('**border radius**')
+    cy.get('#buttons button')
+      .first()
+      .should('have.css', 'border-radius', '50px')
   })
 
   it('has no margin on the body', () => {
@@ -141,5 +148,16 @@ describe('Calculator', () => {
     // for each chanel within +-2 units
     // Tip: "have.css" yields a string that you can parse
     // and pass the RGB object into a "should(callback)" to check
+    operators.forEach((operator) => {
+      cy.contains('#buttons button', operator)
+        .should('have.class', 'operator-btn')
+        .and('have.css', 'background-color')
+        .then(parseColor)
+        .should((color) => {
+          expect(color.r, 'red').to.be.closeTo(orange.r, 2)
+          expect(color.g, 'green').to.be.closeTo(orange.g, 2)
+          expect(color.b, 'blue').to.be.closeTo(orange.b, 2)
+        })
+    })
   })
 })
