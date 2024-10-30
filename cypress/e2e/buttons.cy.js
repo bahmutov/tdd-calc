@@ -98,4 +98,17 @@ describe('Calculator', () => {
     // by checking their border radius
     cy.log('**border radius**')
   })
+
+  it('has no margin on the body', () => {
+    cy.visit('public/index.html')
+    // confirm the body has no margin
+    // https://on.cypress.io/get + "have.css"
+  })
+
+  it('has dark background', () => {
+    cy.visit('public/index.html')
+    // confirm the calculator element has a dark background
+    // https://on.cypress.io/get + "have.css"
+    // and has 15px border radius
+  })
 })
