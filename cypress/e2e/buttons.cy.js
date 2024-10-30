@@ -1,3 +1,10 @@
+// https://www.npmjs.com/package/color-string
+// for converting "rgb(...)" string to an array
+const colorString = require('color-string')
+// https://www.npmjs.com/package/color-convert
+// for converting arrays between color spaces
+const colorConvert = require('color-convert')
+
 describe('Calculator', () => {
   it('has all necessary buttons', () => {
     cy.visit('public/index.html')
@@ -198,5 +205,35 @@ describe('Calculator', () => {
             expect(hoverBackground.b, 'blue').to.be.gt(background.b)
           })
       })
+  })
+
+  it('changes the operator button background to a lighter color', () => {
+    cy.visit('public/index.html')
+    // grab an example operator button, like "+"
+    // and save it under an alias "exampleButton"
+    // https://on.cypress.io/contains
+    // https://on.cypress.io/as
+    //
+    // get the current background color
+    // and parse:
+    //  - the color string "rgb(...)" to an array
+    //    using the color-string package
+    // - then convert the RGB array to HSL array
+    //    using the color-convert package
+    // and grab its 3 number: the lightness value
+    // it should be a number
+    //
+    // pass the starting lightness to "cy.then" callback
+    //
+    // get the button again using the alias
+    // https://on.cypress.io/get
+    //
+    // and hover over it using "cy.realHover"
+    // https://github.com/dmtrKovalenko/cypress-real-events
+    //
+    // get the background color again
+    // and extract the lightness value
+    //
+    // it should be higher than the starting lightness
   })
 })

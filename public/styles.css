@@ -60,3 +60,7 @@ button:hover {
 .operator-btn {
   background-color: hsl(35, 100%, 55%);
 }
+
+.operator-btn:hover {
+  /* the orange button background becomes slightly lighter on hover */
+}
