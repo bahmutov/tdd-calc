@@ -132,32 +132,6 @@ describe('Calculator', () => {
     return { r, g, b }
   }
 
-  it('changes the button background on hover', () => {
-    cy.visit('public/index.html')
-    // take an example button, like "5"
-    // https://on.cypress.io/contains
-    // save the button element for later under an alias "exampleButton"
-    // https://on.cypress.io/as
-    // it should have "background-color" CSS property
-    // use a sanity assertion to print the current value
-    // in the Cypress Command Log column
-    // parse the color string into an object with "r", "g", "b" properties
-    //
-    // and pass that object to the "cy.then" callback function
-    // get the aliased button element using the "exampleButton" alias
-    // https://on.cypress.io/get
-    //
-    // hover over the element using the custom commands from
-    // https://github.com/dmtrKovalenko/cypress-real-events
-    //
-    // get the new background color and parse it
-    //
-    // and compare the new color with the original color
-    // each channel should be higher than the original
-    // because the color is getting lighter
-    // each color channel should be higher than the original
-  })
-
   it('has orange operator buttons', () => {
     cy.visit('public/index.html')
     // a color object representing orange red/green/blue channels
@@ -185,5 +159,44 @@ describe('Calculator', () => {
           expect(color.b, 'blue').to.be.closeTo(orange.b, 2)
         })
     })
+  })
+
+  it('changes the button background on hover', () => {
+    cy.visit('public/index.html')
+    // take an example button, like "5"
+    // https://on.cypress.io/contains
+    cy.contains('#buttons button', '5')
+      // save the button element for later under an alias "exampleButton"
+      // https://on.cypress.io/as
+      .as('exampleButton')
+      // it should have "background-color" CSS property
+      .should('have.css', 'background-color')
+      // use a sanity assertion to print the current value
+      // in the Cypress Command Log column
+      .should('be.a', 'string')
+      // parse the color string into an object with "r", "g", "b" properties
+      .then(parseColor)
+      // and pass that object to the "cy.then" callback function
+      .then((background) => {
+        // get the aliased button element using the "exampleButton" alias
+        // https://on.cypress.io/get
+        cy.get('@exampleButton')
+          // hover over the element using the custom commands from
+          // https://github.com/dmtrKovalenko/cypress-real-events
+          .realHover()
+          // get the new background color and parse it
+          .should('have.css', 'background-color')
+          .should('be.a', 'string')
+          .then(parseColor)
+          // and compare the new color with the original color
+          // each channel should be higher than the original
+          // because the color is getting lighter
+          .should((hoverBackground) => {
+            // each color channel should be higher than the original
+            expect(hoverBackground.r, 'red').to.be.gt(background.r)
+            expect(hoverBackground.g, 'green').to.be.gt(background.g)
+            expect(hoverBackground.b, 'blue').to.be.gt(background.b)
+          })
+      })
   })
 })

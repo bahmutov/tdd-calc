@@ -54,6 +54,7 @@ button {
 
 button:hover {
   /* the button background becomes slightly lighter on hover */
+  background-color: hsl(0, 0%, 40%);
 }
 
 .operator-btn {
