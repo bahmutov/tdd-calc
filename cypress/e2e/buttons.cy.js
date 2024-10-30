@@ -132,6 +132,32 @@ describe('Calculator', () => {
     return { r, g, b }
   }
 
+  it('changes the button background on hover', () => {
+    cy.visit('public/index.html')
+    // take an example button, like "5"
+    // https://on.cypress.io/contains
+    // save the button element for later under an alias "exampleButton"
+    // https://on.cypress.io/as
+    // it should have "background-color" CSS property
+    // use a sanity assertion to print the current value
+    // in the Cypress Command Log column
+    // parse the color string into an object with "r", "g", "b" properties
+    //
+    // and pass that object to the "cy.then" callback function
+    // get the aliased button element using the "exampleButton" alias
+    // https://on.cypress.io/get
+    //
+    // hover over the element using the custom commands from
+    // https://github.com/dmtrKovalenko/cypress-real-events
+    //
+    // get the new background color and parse it
+    //
+    // and compare the new color with the original color
+    // each channel should be higher than the original
+    // because the color is getting lighter
+    // each color channel should be higher than the original
+  })
+
   it('has orange operator buttons', () => {
     cy.visit('public/index.html')
     // a color object representing orange red/green/blue channels

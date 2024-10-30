@@ -52,6 +52,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  /* the button background becomes slightly lighter on hover */
+}
+
 .operator-btn {
   background-color: hsl(35, 100%, 55%);
 }
