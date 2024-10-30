@@ -18,6 +18,10 @@
 
 #buttons {
   /* use CSS grid to place all buttons into 4 columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   /* use 10 pixel gap between the items */
   /* and put some padding around the buttons */
+  gap: 10px;
+  padding: 25px;
 }

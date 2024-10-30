@@ -47,7 +47,7 @@ describe('Calculator', () => {
   it('has a grid of buttons', () => {
     cy.visit('public/index.html')
     // confirm the calculator has 17 buttons
-    //
+    cy.get('#buttons button').should('have.length', 17)
     // how would you check that the buttons are arranged
     // in a grid? The grid should have 5 rows like this:
     // "+" 7 8 9
@@ -61,14 +61,39 @@ describe('Calculator', () => {
     // get the first button's "top offset"
     // https://on.cypress.io/contains
     // https://glebbahmutov.com/cypress-examples/recipes/layout-shift.html
-    // pass the "top offset" to the next "then" callback
-    // https://on.cypress.io/then
-    // confirm each button in the first row has the same "top offset"
-    //
-    // confirm the second row has larger "top offset"
-    // than the offset of the first button
-    //
+    cy.contains('#buttons button', firstRow[0])
+      .should('have.prop', 'offsetTop')
+      .should('be.a', 'Number')
+      // pass the "top offset" to the next "then" callback
+      // https://on.cypress.io/then
+      .then((top) => {
+        // confirm each button in the first row has the same "top offset"
+        firstRow.forEach((text) => {
+          cy.contains('#buttons button', text)
+            .should('have.prop', 'offsetTop')
+            .should('equal', top)
+        })
+
+        // confirm the second row has larger "top offset"
+        // than the offset of the first button
+        cy.contains('#buttons button', secondRow[0])
+          .should('have.prop', 'offsetTop')
+          .should('be.a', 'Number')
+          .and('be.greaterThan', top)
+      })
+
     // similarly to the first row,
     // confirm the first column has the same "left offset"
+    const firstColumn = ['+', '-', '*', '/', 'C']
+    cy.contains('#buttons button', firstColumn[0])
+      .should('have.prop', 'offsetLeft')
+      .should('be.a', 'Number')
+      .then((left) => {
+        firstColumn.forEach((text) => {
+          cy.contains('#buttons button', text)
+            .should('have.prop', 'offsetLeft')
+            .should('equal', left)
+        })
+      })
   })
 })
