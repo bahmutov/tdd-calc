@@ -1,7 +1,7 @@
 /* calculator styles */
 
 body {
-  /* set body margin to 0 pixels */
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -14,9 +14,8 @@ body {
   max-width: 500px;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  /* set the background to dark black color, but not fully black */
-  /* background-color: hsl(0, 0%, 15%); */
-  /* set the border radius to 15 pixels */
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 15px;
 }
 
 #display {

@@ -103,12 +103,43 @@ describe('Calculator', () => {
     cy.visit('public/index.html')
     // confirm the body has no margin
     // https://on.cypress.io/get + "have.css"
+    cy.get('body').should('have.css', 'margin', '0px')
   })
 
   it('has dark background', () => {
     cy.visit('public/index.html')
     // confirm the calculator element has a dark background
     // https://on.cypress.io/get + "have.css"
-    // and has 15px border radius
+    cy.get('#calculator')
+      .should('have.css', 'background-color', 'rgb(38, 38, 38)')
+      // and has 15px border radius
+      .and('have.css', 'border-radius', '15px')
+  })
+
+  /**
+   * parse the color string "rgb(255, 160, 25)"
+   * into an object {r: 255, g: 160, b: 25}
+   */
+  function parseColor(color) {
+    const [r, g, b] = color.match(/\d+/g).map(Number)
+    return { r, g, b }
+  }
+
+  it('has orange operator buttons', () => {
+    cy.visit('public/index.html')
+    // a color object representing orange red/green/blue channels
+    const orange = {
+      r: 255,
+      g: 160,
+      b: 25,
+    }
+    const operators = ['+', '-', '*', '/', 'C']
+    // each operator button should have the class name "operator-btn"
+    // https://on.cypress.io/contains
+    // https://glebbahmutov.com/cypress-examples/recipes/css-examples.html
+    // and the computed background color should be close to orange
+    // for each chanel within +-2 units
+    // Tip: "have.css" yields a string that you can parse
+    // and pass the RGB object into a "should(callback)" to check
   })
 })
