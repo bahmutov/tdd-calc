@@ -58,4 +58,14 @@ describe('Calculator', () => {
     // confirm the display shows "INVALID"
     cy.get('#display').should('have.text', 'INVALID')
   })
+
+  it('removes ERROR message after one second and shows the invalid expression', () => {
+    cy.visit('public/index.html')
+    // enter an invalid expression
+    // into the calculator
+    // click the "=" button
+    // confirm the display shows "ERROR"
+    //
+    // the display shows the original expression after about 1 second
+  })
 })

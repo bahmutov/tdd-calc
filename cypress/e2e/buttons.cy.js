@@ -213,27 +213,47 @@ describe('Calculator', () => {
     // and save it under an alias "exampleButton"
     // https://on.cypress.io/contains
     // https://on.cypress.io/as
-    //
-    // get the current background color
-    // and parse:
-    //  - the color string "rgb(...)" to an array
-    //    using the color-string package
-    // - then convert the RGB array to HSL array
-    //    using the color-convert package
-    // and grab its 3 number: the lightness value
-    // it should be a number
-    //
-    // pass the starting lightness to "cy.then" callback
-    //
-    // get the button again using the alias
-    // https://on.cypress.io/get
-    //
-    // and hover over it using "cy.realHover"
-    // https://github.com/dmtrKovalenko/cypress-real-events
-    //
-    // get the background color again
-    // and extract the lightness value
-    //
-    // it should be higher than the starting lightness
+    cy.contains('#buttons button', '+')
+      .as('exampleButton')
+      // get the current background color
+      // and parse:
+      //  - the color string "rgb(...)" to an array
+      //    using the color-string package
+      // - then convert the RGB array to HSL array
+      //    using the color-convert package
+      // and grab its 3 number: the lightness value
+      // it should be a number
+      .should('have.css', 'background-color')
+      .should('be.a', 'string')
+      .then(colorString.get.rgb)
+      .then(colorConvert.rgb.hsl)
+      .its(2) // get the lightness channel
+      .should('be.a', 'number')
+      // pass the starting lightness to "cy.then" callback
+      .then((lightness) => {
+        // get the button again using the alias
+        // https://on.cypress.io/get
+        cy.get('@exampleButton')
+          // and hover over it using "cy.realHover"
+          // https://github.com/dmtrKovalenko/cypress-real-events
+          .realHover()
+          // get the background color again
+          // and extract the lightness value
+          .should('have.css', 'background-color')
+          .should('be.a', 'string')
+          .then(colorString.get.rgb)
+          .then(colorConvert.rgb.hsl)
+          .its(2)
+          .should('be.a', 'number')
+          // it should be higher than the starting lightness
+          .and('be.gt', lightness)
+      })
+  })
+
+  it('has a distinctive active style', () => {
+    cy.visit('public/index.html')
+    cy.contains('#buttons button', '5')
+      .as('exampleButton')
+      .realClick()
   })
 })

@@ -57,10 +57,19 @@ button:hover {
   background-color: hsl(0, 0%, 40%);
 }
 
+/* active state for all buttons */
+button:active {
+  background-color: hsl(0, 0%, 60%);
+}
+.operator-btn:active {
+  background-color: hsl(35, 100%, 85%);
+}
+
 .operator-btn {
   background-color: hsl(35, 100%, 55%);
 }
 
 .operator-btn:hover {
   /* the orange button background becomes slightly lighter on hover */
+  background-color: hsl(35, 100%, 65%);
 }
