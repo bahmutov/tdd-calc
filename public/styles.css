@@ -57,19 +57,12 @@ button:hover {
   background-color: hsl(0, 0%, 40%);
 }
 
-/* active state for all buttons */
-button:active {
-  background-color: hsl(0, 0%, 60%);
-}
-.operator-btn:active {
-  background-color: hsl(35, 100%, 85%);
-}
-
 .operator-btn {
-  background-color: hsl(35, 100%, 55%);
+  /* use the pumpkin image as background */
+  background-repeat: no-repeat, no-repeat;
 }
 
 .operator-btn:hover {
-  /* the orange button background becomes slightly lighter on hover */
-  background-color: hsl(35, 100%, 65%);
+  /* scale the button slightly */
+  background-color: rgba(0, 0, 0, 0);
 }

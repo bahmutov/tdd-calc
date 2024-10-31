@@ -250,10 +250,27 @@ describe('Calculator', () => {
       })
   })
 
-  it('has a distinctive active style', () => {
+  it('uses pumpkins for the operator buttons', () => {
+    // spy on all GET requests to download the pumpkin image
+    // https://on.cypress.io/intercept
+    // give the intercept an alias "pumpkin"
+    // https://on.cypress.io/as
+    //
     cy.visit('public/index.html')
-    cy.contains('#buttons button', '5')
-      .as('exampleButton')
-      .realClick()
+    // wait for the pumpkin intercept
+    // and confirm the server response code is 200 or 304
+    // https://on.cypress.io/wait
+    //
+    // confirm the pumpkin image is used as the background
+    // of the operator button like "+"
+    // by checking the computed background-image CSS property
+    // https://on.cypress.io/contains
+
+    cy.log('**confirm the button gets larger on hover**')
+    // get the original width of the "+" button
+    // and confirm it is close to 100 pixels
+    //
+    // use the cy.realHover custom command to hover over the button
+    // and confirm its width increases
   })
 })

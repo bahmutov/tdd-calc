@@ -63,9 +63,12 @@ describe('Calculator', () => {
     cy.visit('public/index.html')
     // enter an invalid expression
     // into the calculator
+    cy.enterExpression('1++2')
     // click the "=" button
+    cy.contains('#buttons button', '=').click()
     // confirm the display shows "ERROR"
-    //
+    cy.get('#display').should('have.text', 'ERROR')
     // the display shows the original expression after about 1 second
+    cy.get('#display', { timeout: 1100 }).should('have.text', '1++2')
   })
 })
