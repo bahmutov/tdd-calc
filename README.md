@@ -28,25 +28,33 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 
 ## Branches
 
-| Branch | Lesson                                                                                                   |
-| ------ | -------------------------------------------------------------------------------------------------------- |
-| `a1`   | [Lesson a1: Add HTML page](https://cypress.tips/courses/tdd-calculator/lessons/a1)                       |
-| `a2`   | [Lesson a2: Add the main calculator elements](https://cypress.tips/courses/tdd-calculator/lessons/a2)    |
-| `a3`   | [Lesson a3: Page resources](https://cypress.tips/courses/tdd-calculator/lessons/a3)                      |
-| `a4`   | [Lesson a4: Add buttons](https://cypress.tips/courses/tdd-calculator/lessons/a4)                         |
-| `a5`   | [Lesson a5: Enter numbers](https://cypress.tips/courses/tdd-calculator/lessons/a5)                       |
-| `a6`   | [Lesson a6: Enter expressions](https://cypress.tips/courses/tdd-calculator/lessons/a6)                   |
-| `b1`   | [Lesson b1: Re-run tests on application changes](https://cypress.tips/courses/tdd-calculator/lessons/b1) |
-| `b2`   | [Lesson b2: Clear the current expression](https://cypress.tips/courses/tdd-calculator/lessons/b2)        |
-| `b3`   | [Lesson b3: Spy on global application functions](https://cypress.tips/courses/tdd-calculator/lessons/b3) |
-| `b4`   | [Lesson b4: Add a custom command](https://cypress.tips/courses/tdd-calculator/lessons/b4)                |
-| `b5`   | [Lesson b5: Decimal point happy paths](https://cypress.tips/courses/tdd-calculator/lessons/b5)           |
-| `b6`   | [Lesson b6: Decimal edge cases](https://cypress.tips/courses/tdd-calculator/lessons/b6)                  |
-| `b7`   | [Lesson b7: Unit tests](https://cypress.tips/courses/tdd-calculator/lessons/b7)                          |
-| `c1`   | [Lesson c1: Calculate the expression](https://cypress.tips/courses/tdd-calculator/lessons/c1)            |
-| `c2`   | [Lesson c2: Invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c2)                 |
-| `c3`   | [Lesson c3: Do not evaluate invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c3) |
-| `c4`   | [Lesson c4: Style the display element](https://cypress.tips/courses/tdd-calculator/lessons/c4)           |
+| Branch | Lesson                                                                                                           |
+| ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `a1`   | [Lesson a1: Add HTML page](https://cypress.tips/courses/tdd-calculator/lessons/a1)                               |
+| `a2`   | [Lesson a2: Add the main calculator elements](https://cypress.tips/courses/tdd-calculator/lessons/a2)            |
+| `a3`   | [Lesson a3: Page resources](https://cypress.tips/courses/tdd-calculator/lessons/a3)                              |
+| `a4`   | [Lesson a4: Add buttons](https://cypress.tips/courses/tdd-calculator/lessons/a4)                                 |
+| `a5`   | [Lesson a5: Enter numbers](https://cypress.tips/courses/tdd-calculator/lessons/a5)                               |
+| `a6`   | [Lesson a6: Enter expressions](https://cypress.tips/courses/tdd-calculator/lessons/a6)                           |
+| `b1`   | [Lesson b1: Re-run tests on application changes](https://cypress.tips/courses/tdd-calculator/lessons/b1)         |
+| `b2`   | [Lesson b2: Clear the current expression](https://cypress.tips/courses/tdd-calculator/lessons/b2)                |
+| `b3`   | [Lesson b3: Spy on global application functions](https://cypress.tips/courses/tdd-calculator/lessons/b3)         |
+| `b4`   | [Lesson b4: Add a custom command](https://cypress.tips/courses/tdd-calculator/lessons/b4)                        |
+| `b5`   | [Lesson b5: Decimal point happy paths](https://cypress.tips/courses/tdd-calculator/lessons/b5)                   |
+| `b6`   | [Lesson b6: Decimal edge cases](https://cypress.tips/courses/tdd-calculator/lessons/b6)                          |
+| `b7`   | [Lesson b7: Unit tests](https://cypress.tips/courses/tdd-calculator/lessons/b7)                                  |
+| `c1`   | [Lesson c1: Calculate the expression](https://cypress.tips/courses/tdd-calculator/lessons/c1)                    |
+| `c2`   | [Lesson c2: Invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c2)                         |
+| `c3`   | [Lesson c3: Do not evaluate invalid expressions](https://cypress.tips/courses/tdd-calculator/lessons/c3)         |
+| `c4`   | [Lesson c4: Style the display element](https://cypress.tips/courses/tdd-calculator/lessons/c4)                   |
+| `c5`   | [Lesson c5: Style the keyboard buttons](https://cypress.tips/courses/tdd-calculator/lessons/c5)                  |
+| `c6`   | [Lesson c6: Make the keyboard buttons round](https://cypress.tips/courses/tdd-calculator/lessons/c6)             |
+| `c7`   | [Lesson c7: Style the body element](https://cypress.tips/courses/tdd-calculator/lessons/c7)                      |
+| `c8`   | [Lesson c8: Style the operator buttons](https://cypress.tips/courses/tdd-calculator/lessons/c8)                  |
+| `c9`   | [Lesson c9: Style the hover state](https://cypress.tips/courses/tdd-calculator/lessons/c9)                       |
+| `c10`  | [Lesson c10: Confirm the operator buttons hover styles](https://cypress.tips/courses/tdd-calculator/lessons/c10) |
+| `d1`   | [Lesson d1: Error message goes away](https://cypress.tips/courses/tdd-calculator/lessons/d1)                     |
+| `d2`   | [Lesson d2: Halloween pumpkins](https://cypress.tips/courses/tdd-calculator/lessons/d2)                          |
 
 ## Small print
 
