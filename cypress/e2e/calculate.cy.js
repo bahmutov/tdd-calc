@@ -71,4 +71,19 @@ describe('Calculator', () => {
     // the display shows the original expression after about 1 second
     cy.get('#display', { timeout: 1100 }).should('have.text', '1++2')
   })
+
+  it('remembers the calculated expression', () => {
+    cy.visit('public/index.html')
+
+    cy.log('**remembers the expression**')
+    // enter an expression like "1+2"
+    // reload the page
+    // https://on.cypress.io/reload
+    // and confirm the display shows the entered expression
+
+    cy.log('**remembers the result**')
+    // click the "=" button to calculate the result
+    // reload the page
+    // and confirm the display shows the calculated result
+  })
 })

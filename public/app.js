@@ -1,5 +1,9 @@
 // calculator logic
 
+// on page visit
+// load the last expression from the localStorage (if any)
+// use the local storage key "expression"
+
 function appendDot(expression) {
   // check if we are trying a number right now
   // this will split expressions like
@@ -37,6 +41,8 @@ function enterDigit(digit) {
   } else {
     display.innerText += digit
   }
+
+  // store the current expression in the localStorage
 }
 
 /**
@@ -68,6 +74,8 @@ function calculate() {
       display.innerText = expression
     }, 1000)
   }
+
+  // store the current expression in the localStorage
 }
 
 /**
