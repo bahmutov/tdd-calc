@@ -94,4 +94,21 @@ describe('Calculator', () => {
     // and confirm the display shows the calculated result
     cy.get('#display').should('have.text', '3')
   })
+
+  it('stores its data in localStorage', () => {
+    cy.visit('public/index.html')
+    cy.enterExpression('1+2')
+    // access the application's local storage object
+    // via the "window.localStorage" property
+    // https://on.cypress.io/window
+    // https://on.cypress.io/its
+    //
+    // get the "calculator_data" item from the local storage
+    // https://on.cypress.io/invoke
+    //
+    // it should be a string
+    // parse the string into an object
+    //
+    // and confirm the entire object has the expected data
+  })
 })

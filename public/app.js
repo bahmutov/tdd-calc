@@ -2,10 +2,17 @@
 
 // on page visit
 // load the last expression from the localStorage (if any)
-// use the local storage key "expression"
-const lastExpression = localStorage.getItem('expression')
-if (lastExpression) {
-  document.getElementById('display').innerText = lastExpression
+// use the local storage key "calculator_data"
+try {
+  const data = JSON.parse(localStorage.getItem('calculator_data'))
+  if (data.version === 'v1') {
+    const lastExpression = data.expression
+    if (lastExpression) {
+      document.getElementById('display').innerText = lastExpression
+    }
+  }
+} catch {
+  // ignore serialization errors
 }
 
 function appendDot(expression) {
@@ -47,7 +54,11 @@ function enterDigit(digit) {
   }
 
   // store the current expression in the localStorage
-  localStorage.setItem('expression', display.innerText)
+  const data = {
+    version: 'v1',
+    expression: display.innerText,
+  }
+  localStorage.setItem('calculator_data', JSON.stringify(data))
 }
 
 /**
@@ -81,7 +92,11 @@ function calculate() {
   }
 
   // store the current expression in the localStorage
-  localStorage.setItem('expression', display.innerText)
+  const data = {
+    version: 'v1',
+    expression: display.innerText,
+  }
+  localStorage.setItem('calculator_data', JSON.stringify(data))
 }
 
 /**
