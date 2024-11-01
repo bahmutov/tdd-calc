@@ -77,13 +77,21 @@ describe('Calculator', () => {
 
     cy.log('**remembers the expression**')
     // enter an expression like "1+2"
+    cy.enterExpression('1+2')
+    cy.get('#display').should('have.text', '1+2')
     // reload the page
     // https://on.cypress.io/reload
+    cy.reload()
     // and confirm the display shows the entered expression
+    cy.get('#display').should('have.text', '1+2')
 
     cy.log('**remembers the result**')
     // click the "=" button to calculate the result
+    cy.contains('#buttons button', '=').click()
+    cy.get('#display').should('have.text', '3')
     // reload the page
+    cy.reload()
     // and confirm the display shows the calculated result
+    cy.get('#display').should('have.text', '3')
   })
 })

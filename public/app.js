@@ -3,6 +3,10 @@
 // on page visit
 // load the last expression from the localStorage (if any)
 // use the local storage key "expression"
+const lastExpression = localStorage.getItem('expression')
+if (lastExpression) {
+  document.getElementById('display').innerText = lastExpression
+}
 
 function appendDot(expression) {
   // check if we are trying a number right now
@@ -43,6 +47,7 @@ function enterDigit(digit) {
   }
 
   // store the current expression in the localStorage
+  localStorage.setItem('expression', display.innerText)
 }
 
 /**
@@ -76,6 +81,7 @@ function calculate() {
   }
 
   // store the current expression in the localStorage
+  localStorage.setItem('expression', display.innerText)
 }
 
 /**
