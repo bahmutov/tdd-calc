@@ -62,6 +62,11 @@ function calculate() {
     display.innerText = result
   } catch (err) {
     display.innerText = 'ERROR'
+    // after 1 second, put the original
+    // expression back in the display
+    setTimeout(() => {
+      display.innerText = expression
+    }, 1000)
   }
 }
 
