@@ -102,13 +102,19 @@ describe('Calculator', () => {
     // via the "window.localStorage" property
     // https://on.cypress.io/window
     // https://on.cypress.io/its
-    //
-    // get the "calculator_data" item from the local storage
-    // https://on.cypress.io/invoke
-    //
-    // it should be a string
-    // parse the string into an object
-    //
-    // and confirm the entire object has the expected data
+    cy.window()
+      .its('localStorage')
+      // get the "calculator_data" item from the local storage
+      // https://on.cypress.io/invoke
+      .invoke('getItem', 'calculator_data')
+      // it should be a string
+      .should('be.a', 'string')
+      // parse the string into an object
+      .then(JSON.parse)
+      // and confirm the entire object has the expected data
+      .should('deep.equal', {
+        version: 'v1',
+        expression: '1+2',
+      })
   })
 })

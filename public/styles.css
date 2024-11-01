@@ -11,11 +11,12 @@ body {
 }
 
 #calculator {
-  max-width: 500px;
   overflow: hidden;
   font-family: Arial, sans-serif;
   background-color: hsl(0, 0%, 15%);
   border-radius: 15px;
+  display: flex;
+  flex-direction: row;
 }
 
 #display {
@@ -72,4 +73,21 @@ button:active {
 .operator-btn:hover {
   /* the orange button background becomes slightly lighter on hover */
   background-color: hsl(35, 100%, 65%);
+}
+
+#right-column {
+  width: 500px;
+  background-color: hsl(0, 0%, 35%);
+}
+
+#history {
+  width: 100%;
+  padding: 20px;
+  height: 95vh;
+  min-height: 100px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 500px) {
+  /* hide the right column element on smaller screens */
 }
