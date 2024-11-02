@@ -15,6 +15,10 @@ try {
   // ignore serialization errors
 }
 
+// we probably want to keep around the reference to the
+// LI element with ID "history-list" to append new history items
+const historyListElement = document.getElementById('history-list')
+
 function appendDot(expression) {
   // check if we are trying a number right now
   // this will split expressions like
@@ -90,6 +94,8 @@ function calculate() {
       display.innerText = expression
     }, 1000)
   }
+
+  // append the new expression and result to the history list
 
   // store the current expression in the localStorage
   const data = {

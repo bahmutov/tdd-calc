@@ -1,4 +1,5 @@
-describe('History', () => {
+// Note: using the desktop mode by default to display the history
+describe('History', { viewportWidth: 1000 }, () => {
   it('shows in landscape mode on a larger screen', () => {
     cy.visit('public/index.html')
     // set the current viewport to "iphone-6"
@@ -13,5 +14,20 @@ describe('History', () => {
     cy.viewport('macbook-15')
     // confirm the #history element is visible
     cy.get('#history').should('be.visible')
+  })
+
+  it('shows entered expressions and results', () => {
+    cy.visit('public/index.html')
+
+    cy.log('**first expression**')
+    // enter an expression like "1+2"
+    // click the "=" button to compute the result
+    // confirm the history contains the "expression=result" LI element
+
+    cy.log('**second expression**')
+    // clear the current expression
+    // enter an expression like "3*4"
+    // click the "=" button to compute the result
+    // confirm the history contains the "expression=result" LI element
   })
 })
