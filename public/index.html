@@ -10,36 +10,40 @@
   </head>
   <body>
     <div id="calculator">
-      <!-- the entered expression and computed result -->
-      <div id="display"></div>
-      <div id="buttons">
-        <button onclick="enterDigit('+')" class="operator-btn">
-          +
-        </button>
-        <button onclick="enterDigit(7)">7</button>
-        <button onclick="enterDigit(8)">8</button>
-        <button onclick="enterDigit(9)">9</button>
-        <button onclick="enterDigit('-')" class="operator-btn">
-          -
-        </button>
-        <button onclick="enterDigit(4)">4</button>
-        <button onclick="enterDigit(5)">5</button>
-        <button onclick="enterDigit(6)">6</button>
-        <button onclick="enterDigit('*')" class="operator-btn">
-          *
-        </button>
-        <button onclick="enterDigit(1)">1</button>
-        <button onclick="enterDigit(2)">2</button>
-        <button onclick="enterDigit(3)">3</button>
-        <button onclick="enterDigit('/')" class="operator-btn">
-          /
-        </button>
-        <button onclick="enterDigit(0)">0</button>
-        <button onclick="enterDigit('.')">.</button>
-        <button onclick="calculate()">=</button>
-        <button onclick="clearDisplay()" class="operator-btn">
-          C
-        </button>
+      <div id="left-column">
+        <div id="display"></div>
+        <div id="buttons">
+          <button onclick="enterDigit('+')" class="operator-btn">
+            +
+          </button>
+          <button onclick="enterDigit(7)">7</button>
+          <button onclick="enterDigit(8)">8</button>
+          <button onclick="enterDigit(9)">9</button>
+          <button onclick="enterDigit('-')" class="operator-btn">
+            -
+          </button>
+          <button onclick="enterDigit(4)">4</button>
+          <button onclick="enterDigit(5)">5</button>
+          <button onclick="enterDigit(6)">6</button>
+          <button onclick="enterDigit('*')" class="operator-btn">
+            *
+          </button>
+          <button onclick="enterDigit(1)">1</button>
+          <button onclick="enterDigit(2)">2</button>
+          <button onclick="enterDigit(3)">3</button>
+          <button onclick="enterDigit('/')" class="operator-btn">
+            /
+          </button>
+          <button onclick="enterDigit(0)">0</button>
+          <button onclick="enterDigit('.')">.</button>
+          <button onclick="calculate()">=</button>
+          <button onclick="clearDisplay()" class="operator-btn">
+            C
+          </button>
+        </div>
+      </div>
+      <div id="right-column">
+        <div id="history"></div>
       </div>
     </div>
     <script src="./app.js"></script>
