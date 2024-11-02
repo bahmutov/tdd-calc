@@ -90,4 +90,7 @@ button:active {
 
 @media screen and (max-width: 500px) {
   /* hide the right column element on smaller screens */
+  #right-column {
+    display: none;
+  }
 }
