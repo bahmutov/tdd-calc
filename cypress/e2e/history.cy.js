@@ -1,4 +1,5 @@
-// Note: using the desktop mode by default to display the history
+import { CalculatorPage } from './calculator-po'
+
 describe('History', { viewportWidth: 1000 }, () => {
   it('shows in landscape mode on a larger screen', () => {
     cy.visit('public/index.html')
@@ -17,24 +18,16 @@ describe('History', { viewportWidth: 1000 }, () => {
   })
 
   it('shows entered expressions and results', () => {
-    cy.visit('public/index.html')
+    CalculatorPage.visit()
 
     cy.log('**first expression**')
-    // enter an expression like "1+2"
-    cy.enterExpression('1+2')
-    // click the "=" button to compute the result
-    cy.contains('#buttons button', '=').click()
+    CalculatorPage.compute('1+2', '3')
     // confirm the history contains the "expression=result" LI element
-    cy.get('#history').contains('li', '1+2=3')
+    CalculatorPage.checkHistory('1+2=3')
 
     cy.log('**second expression**')
-    // clear the current expression
-    cy.contains('#buttons button', 'C').click()
-    // enter an expression like "3*4"
-    cy.enterExpression('3*4')
-    // click the "=" button to compute the result
-    cy.contains('#buttons button', '=').click()
-    // confirm the history contains the "expression=result" LI element
-    cy.get('#history').contains('li', '3*4=12')
+    CalculatorPage.clear().compute('3*4', '12')
+    // check the history again with two items
+    CalculatorPage.checkHistory('1+2=3', '3*4=12')
   })
 })
