@@ -21,13 +21,20 @@ describe('History', { viewportWidth: 1000 }, () => {
 
     cy.log('**first expression**')
     // enter an expression like "1+2"
+    cy.enterExpression('1+2')
     // click the "=" button to compute the result
+    cy.contains('#buttons button', '=').click()
     // confirm the history contains the "expression=result" LI element
+    cy.get('#history').contains('li', '1+2=3')
 
     cy.log('**second expression**')
     // clear the current expression
+    cy.contains('#buttons button', 'C').click()
     // enter an expression like "3*4"
+    cy.enterExpression('3*4')
     // click the "=" button to compute the result
+    cy.contains('#buttons button', '=').click()
     // confirm the history contains the "expression=result" LI element
+    cy.get('#history').contains('li', '3*4=12')
   })
 })

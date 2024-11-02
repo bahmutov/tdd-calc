@@ -96,6 +96,7 @@ function calculate() {
   }
 
   // append the new expression and result to the history list
+  historyListElement.innerHTML += `<li>${expression}=${display.innerText}</li>`
 
   // store the current expression in the localStorage
   const data = {
