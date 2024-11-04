@@ -19,6 +19,9 @@ try {
 // LI element with ID "history-list" to append new history items
 const historyListElement = document.getElementById('history-list')
 
+// the current list of history entries
+const history = []
+
 function appendDot(expression) {
   // check if we are trying a number right now
   // this will split expressions like
@@ -59,8 +62,9 @@ function enterDigit(digit) {
 
   // store the current expression in the localStorage
   const data = {
-    version: 'v1',
+    version: 'v2',
     expression: display.innerText,
+    history,
   }
   localStorage.setItem('calculator_data', JSON.stringify(data))
 }
@@ -96,12 +100,16 @@ function calculate() {
   }
 
   // append the new expression and result to the history list
-  historyListElement.innerHTML += `<li>${expression}=${display.innerText}</li>`
+  const historyItem = `${expression}=${display.innerText}`
+  historyListElement.innerHTML += `<li>${historyItem}</li>`
+  // store the history in the localStorage
+  history.push(historyItem)
 
   // store the current expression in the localStorage
   const data = {
-    version: 'v1',
+    version: 'v2',
     expression: display.innerText,
+    history,
   }
   localStorage.setItem('calculator_data', JSON.stringify(data))
 }
