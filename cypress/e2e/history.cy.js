@@ -52,4 +52,14 @@ describe('History', { viewportWidth: 1000 }, () => {
         history: ['1+2=3', '3*4=12'],
       })
   })
+
+  it('restores the history from the local storage', () => {
+    // set the local storage entry "calculator_data"
+    // version v2
+    // expression "-1"
+    // and several history items
+
+    CalculatorPage.visit()
+    // confirm the history is restored correctly
+  })
 })
