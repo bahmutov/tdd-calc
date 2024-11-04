@@ -30,4 +30,16 @@ describe('History', { viewportWidth: 1000 }, () => {
     // check the history again with two items
     CalculatorPage.checkHistory('1+2=3', '3*4=12')
   })
+
+  it('stores the history in the local storage', () => {
+    CalculatorPage.visit()
+
+    CalculatorPage.compute('1+2', '3').clear().compute('3*4', '12')
+    CalculatorPage.checkHistory('1+2=3', '3*4=12')
+
+    // check the local storage entry "calculator_data"
+    // version v2
+    // expression "12"
+    // history ["1+2=3", "3*4=12"]
+  })
 })

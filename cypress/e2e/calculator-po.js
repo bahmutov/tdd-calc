@@ -20,6 +20,7 @@ export const CalculatorPage = {
       log: false,
     })
     cy.get('#display').should('have.text', expectedResult)
+    return this
   },
 
   clear() {
