@@ -41,5 +41,15 @@ describe('History', { viewportWidth: 1000 }, () => {
     // version v2
     // expression "12"
     // history ["1+2=3", "3*4=12"]
+    cy.window()
+      .its('localStorage')
+      .invoke('getItem', 'calculator_data')
+      .should('be.a', 'string')
+      .then(JSON.parse)
+      .should('deep.equal', {
+        version: 'v2',
+        expression: '12',
+        history: ['1+2=3', '3*4=12'],
+      })
   })
 })
