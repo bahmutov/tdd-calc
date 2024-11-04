@@ -55,6 +55,12 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `c10`  | [Lesson c10: Confirm the operator buttons hover styles](https://cypress.tips/courses/tdd-calculator/lessons/c10) |
 | `d1`   | [Lesson d1: Error message goes away](https://cypress.tips/courses/tdd-calculator/lessons/d1)                     |
 | `d2`   | [Lesson d2: Halloween pumpkins](https://cypress.tips/courses/tdd-calculator/lessons/d2)                          |
+| `d3`   | [Lesson d3: The saved expression](https://cypress.tips/courses/tdd-calculator/lessons/d3)                        |
+| `d4`   | [Lesson d4: Check an object stored in local storage](https://cypress.tips/courses/tdd-calculator/lessons/d4)     |
+| `d5`   | [Lesson d5: Add the history element](https://cypress.tips/courses/tdd-calculator/lessons/d5)                     |
+| `d6`   | [Lesson d6: Append history items](https://cypress.tips/courses/tdd-calculator/lessons/d6)                        |
+| `d7`   | [Lesson d7: Use a page object](https://cypress.tips/courses/tdd-calculator/lessons/d7)                           |
+| `d8`   | [Lesson d8: Store history in the local storage](https://cypress.tips/courses/tdd-calculator/lessons/d8)          |
 
 ## Small print
 
