@@ -78,11 +78,32 @@ describe('History', { viewportWidth: 1000 }, () => {
   it('correctly migrates v1 history to v2', () => {
     // set the local storage to the "v1" format
     // with the expression "12"
+    cy.window()
+      .its('localStorage')
+      .invoke(
+        'setItem',
+        'calculator_data',
+        JSON.stringify({
+          version: 'v1',
+          expression: '12',
+        }),
+      )
 
     CalculatorPage.visit()
     // confirm the v1 data is migrated to v2
     //  - history shows the last expression = itself
     //  - the local storage entry is updated to v2
     cy.get('#display').should('have.text', '12')
+    CalculatorPage.checkHistory('12=12')
+    cy.window()
+      .its('localStorage')
+      .invoke('getItem', 'calculator_data')
+      .should('be.a', 'string')
+      .then(JSON.parse)
+      .should('deep.equal', {
+        version: 'v2',
+        expression: '12',
+        history: ['12=12'],
+      })
   })
 })

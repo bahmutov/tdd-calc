@@ -1,5 +1,8 @@
 // calculator logic
 
+// the current list of history entries
+const history = []
+
 // on page visit
 // load the last expression from the localStorage (if any)
 // use the local storage key "calculator_data"
@@ -9,6 +12,21 @@ try {
     const lastExpression = data.expression
     if (lastExpression) {
       document.getElementById('display').innerText = lastExpression
+      // push the last expression to the history
+      const historyListElement =
+        document.getElementById('history-list')
+      historyListElement.innerHTML = `<li>${lastExpression}=${lastExpression}</li>`
+      history.push(`${lastExpression}=${lastExpression}`)
+      // save the migrated data into the localStorage
+      const migratedData = {
+        version: 'v2',
+        expression: lastExpression,
+        history,
+      }
+      localStorage.setItem(
+        'calculator_data',
+        JSON.stringify(migratedData),
+      )
     }
   } else if (data.version === 'v2') {
     // set the DOM elements based on the data stored in the item
@@ -33,9 +51,6 @@ try {
 // we probably want to keep around the reference to the
 // LI element with ID "history-list" to append new history items
 const historyListElement = document.getElementById('history-list')
-
-// the current list of history entries
-const history = []
 
 function appendDot(expression) {
   // check if we are trying a number right now
