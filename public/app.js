@@ -10,6 +10,21 @@ try {
     if (lastExpression) {
       document.getElementById('display').innerText = lastExpression
     }
+  } else if (data.version === 'v2') {
+    // set the DOM elements based on the data stored in the item
+    // - expression
+    // - history items
+    const lastExpression = data.expression
+    if (lastExpression) {
+      document.getElementById('display').innerText = lastExpression
+    }
+    if (Array.isArray(data.history)) {
+      const historyListElement =
+        document.getElementById('history-list')
+      historyListElement.innerHTML = data.history
+        .map((item) => `<li>${item}</li>`)
+        .join('\n')
+    }
   }
 } catch {
   // ignore serialization errors

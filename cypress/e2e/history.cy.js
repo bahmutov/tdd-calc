@@ -58,8 +58,31 @@ describe('History', { viewportWidth: 1000 }, () => {
     // version v2
     // expression "-1"
     // and several history items
+    cy.window()
+      .its('localStorage')
+      .invoke(
+        'setItem',
+        'calculator_data',
+        JSON.stringify({
+          version: 'v2',
+          expression: '12',
+          history: ['1+2+3=6', '3-4=-1'],
+        }),
+      )
 
     CalculatorPage.visit()
     // confirm the history is restored correctly
+    CalculatorPage.checkHistory('1+2+3=6', '3-4=-1')
+  })
+
+  it('correctly migrates v1 history to v2', () => {
+    // set the local storage to the "v1" format
+    // with the expression "12"
+
+    CalculatorPage.visit()
+    // confirm the v1 data is migrated to v2
+    //  - history shows the last expression = itself
+    //  - the local storage entry is updated to v2
+    cy.get('#display').should('have.text', '12')
   })
 })
