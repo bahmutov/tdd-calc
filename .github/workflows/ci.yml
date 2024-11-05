@@ -1,0 +1,12 @@
+name: CI
+on: push
+jobs:
+  e2e:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        # - name: Cypress run
+        # Install npm dependencies, cache them correctly
+        # and run all Cypress tests using Cypress GHA action
+        # https://github.com/cypress-io/github-action
