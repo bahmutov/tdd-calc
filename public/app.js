@@ -54,7 +54,7 @@ try {
 // LI element with ID "history-list" to append new history items
 const historyListElement = document.getElementById('history-list')
 
-function appendDot(expression) {
+export function appendDot(expression) {
   // check if we are trying a number right now
   // this will split expressions like
   // "1+2.3" into ["1", "2.3"]
@@ -82,7 +82,7 @@ function appendDot(expression) {
  * Function that receives a digit to append to the currently displayed text
  * @param {number|'+'|'-'|'*'|'/'} digit A single digit to append to the display text
  */
-function enterDigit(digit) {
+export function enterDigit(digit) {
   const display = document.getElementById('display')
 
   if (digit === '.') {
@@ -106,7 +106,7 @@ function enterDigit(digit) {
  * using the `eval` function and replace the display text with the result
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
  */
-function calculate() {
+export function calculate() {
   const display = document.getElementById('display')
   const expression = display.innerText
 
@@ -149,7 +149,7 @@ function calculate() {
 /**
  * Clears the current display text
  */
-function clearDisplay() {
+export function clearDisplay() {
   const display = document.getElementById('display')
   display.innerText = ''
 }

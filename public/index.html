@@ -48,7 +48,22 @@
         </div>
       </div>
     </div>
-    <!-- use ES6 modules to import the specific functions from the app.js -->
-    <script src="./app.js"></script>
+    <script type="module">
+      // import the functions from the app.js file
+      // like "enterDigit" and "calculate"
+      // and set them as properties of the window object
+      // so we can still use them as global handlers
+      // in the "onclick" attribute of the buttons
+      import {
+        enterDigit,
+        calculate,
+        clearDisplay,
+        appendDot,
+      } from './app.js'
+      window.enterDigit = enterDigit
+      window.calculate = calculate
+      window.clearDisplay = clearDisplay
+      window.appendDot = appendDot
+    </script>
   </body>
 </html>
