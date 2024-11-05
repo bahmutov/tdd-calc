@@ -13,6 +13,8 @@ module.exports = defineConfig({
     viewportHeight: 900,
     viewportWidth: 500,
     fixturesFolder: false,
+    // enable running all specs together
+    // https://on.cypress.io/experiments
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // and load any plugins that require the Node environment
