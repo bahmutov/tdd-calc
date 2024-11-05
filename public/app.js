@@ -42,6 +42,8 @@ try {
       historyListElement.innerHTML = data.history
         .map((item) => `<li>${item}</li>`)
         .join('\n')
+      history.length = 0
+      history.push(...data.history)
     }
   }
 } catch {

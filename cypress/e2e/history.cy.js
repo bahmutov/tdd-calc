@@ -106,4 +106,38 @@ describe('History', { viewportWidth: 1000 }, () => {
         history: ['12=12'],
       })
   })
+
+  it('appends new history items to the restored history', () => {
+    cy.window()
+      .its('localStorage')
+      .invoke(
+        'setItem',
+        'calculator_data',
+        JSON.stringify({
+          version: 'v2',
+          expression: '12',
+          history: ['1+2+3=6', '3-4=-1'],
+        }),
+      )
+
+    CalculatorPage.visit()
+    // confirm the history is restored correctly
+    CalculatorPage.checkHistory('1+2+3=6', '3-4=-1')
+    // compute one more expression and check the history
+    // it should include the restored items and the new one
+    CalculatorPage.clear().compute('0+0', '0')
+    CalculatorPage.checkHistory('1+2+3=6', '3-4=-1', '0+0=0')
+    // check the local storage entry
+    // does it have the restored and the new history items?
+    cy.window()
+      .its('localStorage')
+      .invoke('getItem', 'calculator_data')
+      .should('be.a', 'string')
+      .then(JSON.parse)
+      .should('deep.equal', {
+        version: 'v2',
+        expression: '0',
+        history: ['1+2+3=6', '3-4=-1', '0+0=0'],
+      })
+  })
 })
