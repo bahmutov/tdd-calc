@@ -61,6 +61,10 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `d6`   | [Lesson d6: Append history items](https://cypress.tips/courses/tdd-calculator/lessons/d6)                        |
 | `d7`   | [Lesson d7: Use a page object](https://cypress.tips/courses/tdd-calculator/lessons/d7)                           |
 | `d8`   | [Lesson d8: Store history in the local storage](https://cypress.tips/courses/tdd-calculator/lessons/d8)          |
+| `d9`   | [https://cypress.tips/courses/tdd-calculator/lessons/d9](https://cypress.tips/courses/tdd-calculator/lessons/d9) |
+| `d10`  | [Lesson d10: Implement data migration](https://cypress.tips/courses/tdd-calculator/lessons/d10)                  |
+| `d11`  | [Lesson d11: Find and fix a history edge case](https://cypress.tips/courses/tdd-calculator/lessons/d11)          |
+| `e1`   | [Lesson e1: Run all tests on CI](https://cypress.tips/courses/tdd-calculator/lessons/e1)                         |
 
 ## Small print
 
