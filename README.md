@@ -65,6 +65,10 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `d10`  | [Lesson d10: Implement data migration](https://cypress.tips/courses/tdd-calculator/lessons/d10)                  |
 | `d11`  | [Lesson d11: Find and fix a history edge case](https://cypress.tips/courses/tdd-calculator/lessons/d11)          |
 | `e1`   | [Lesson e1: Run all tests on CI](https://cypress.tips/courses/tdd-calculator/lessons/e1)                         |
+| `e2`   | [Lesson e2: Use ES6 JavaScript modules](https://cypress.tips/courses/tdd-calculator/lessons/e2)                  |
+| `e3`   | [Lesson e3: Unit tests for an exported function](https://cypress.tips/courses/tdd-calculator/lessons/e3)         |
+| `e4`   | [Lesson e4: Run all specs](https://cypress.tips/courses/tdd-calculator/lessons/e4)                               |
+| `e5`   | [Lesson e5: Print page as PDF](https://cypress.tips/courses/tdd-calculator/lessons/e5)                           |
 
 ## Small print
 
