@@ -11,3 +11,14 @@ jobs:
         # and run all Cypress tests using Cypress GHA action
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
+        # use desktop Chrome browser to run the tests
+        with:
+          browser: chrome
+      # save the downloaded PDF file
+      - name: Save PDF artifact
+        # https://github.com/actions/upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: calculator.pdf
+          if-no-files-found: error
