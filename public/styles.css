@@ -26,8 +26,9 @@ body {
   font-size: 80px;
   text-align: left;
   border: none;
+  /* color: white; */
   background-color: hsl(0, 0%, 20%);
-  color: white;
+  color: hsl(0, 0%, 30%);
 }
 
 #buttons {

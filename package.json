@@ -26,6 +26,7 @@
     "cypress": "^13.15.1",
     "cypress-real-events": "^1.13.0",
     "cypress-watch-and-reload": "^1.10.16",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "wick-a11y": "^1.2.2"
   }
 }
