@@ -113,8 +113,9 @@ describe('Calculator', () => {
       .then(JSON.parse)
       // and confirm the entire object has the expected data
       .should('deep.equal', {
-        version: 'v1',
+        version: 'v2',
         expression: '1+2',
+        history: [],
       })
   })
 })
