@@ -15,6 +15,7 @@ module.exports = defineConfig({
     fixturesFolder: false,
     // enable running all specs together
     // https://on.cypress.io/experiments
+    experimentalRunAllSpecs: true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // and load any plugins that require the Node environment
