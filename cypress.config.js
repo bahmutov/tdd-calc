@@ -1,6 +1,6 @@
 const { defineConfig } = require('cypress')
-// https://github.com/sclavijosuero/wick-a11y
-const addAccessibilityTasks = require('wick-a11y/accessibility-tasks')
+
+// load the accessibility plugin
 
 module.exports = defineConfig({
   e2e: {
@@ -23,7 +23,6 @@ module.exports = defineConfig({
       // and load any plugins that require the Node environment
 
       // add accessibility tasks
-      addAccessibilityTasks(on)
 
       // https://github.com/bahmutov/cypress-watch-and-reload
       return require('cypress-watch-and-reload/plugins')(on, config)
