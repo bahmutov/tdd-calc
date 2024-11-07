@@ -69,6 +69,8 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `e3`   | [Lesson e3: Unit tests for an exported function](https://cypress.tips/courses/tdd-calculator/lessons/e3)         |
 | `e4`   | [Lesson e4: Run all specs](https://cypress.tips/courses/tdd-calculator/lessons/e4)                               |
 | `e5`   | [Lesson e5: Print page as PDF](https://cypress.tips/courses/tdd-calculator/lessons/e5)                           |
+| `e6`   | [Lesson e6: Catch accessibility issues](https://cypress.tips/courses/tdd-calculator/lessons/e6)                  |
+| `e7`   | [Lesson e7: Button color contrast](https://cypress.tips/courses/tdd-calculator/lessons/e7)                       |
 
 ## Small print
 
