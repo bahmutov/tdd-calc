@@ -133,4 +133,11 @@ describe('Calculator', () => {
     cy.contains('#buttons button', '=').click()
     cy.get('#display').should('have.text', '3')
   })
+
+  it('does not use global clearDisplay', () => {
+    cy.visit('public/index.html')
+    // the "C" button should not have an "onclick" attribute
+    // the window object should not have a "clearDisplay" property
+    // confirm the clear display button still works
+  })
 })
