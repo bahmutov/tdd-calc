@@ -84,7 +84,7 @@ export function enterDigit(digit) {
  * using the `eval` function and replace the display text with the result
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
  */
-export function calculate() {
+function calculate() {
   const display = document.getElementById('display')
   const expression = display.innerText
 
@@ -131,3 +131,9 @@ export function clearDisplay() {
   const display = document.getElementById('display')
   display.innerText = ''
 }
+
+// attach event handlers
+// - button calculate should call the calculate function
+document
+  .querySelector('#buttons button[title=calculate]')
+  .addEventListener('click', calculate)

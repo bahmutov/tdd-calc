@@ -122,9 +122,15 @@ describe('Calculator', () => {
   it('does not use global calculate', () => {
     cy.visit('public/index.html')
     // the "=" button should not have an "onclick" attribute
-    //
+    cy.contains('#buttons button', '=').should(
+      'not.have.attr',
+      'onclick',
+    )
     // the window object should not have a "calculate" property
-    //
+    cy.window().should('not.have.property', 'calculate')
     // confirm the calculator still calculates
+    cy.enterExpression('1+2')
+    cy.contains('#buttons button', '=').click()
+    cy.get('#display').should('have.text', '3')
   })
 })

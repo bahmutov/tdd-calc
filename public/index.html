@@ -36,7 +36,7 @@
           </button>
           <button onclick="enterDigit(0)">0</button>
           <button onclick="enterDigit('.')">.</button>
-          <button onclick="calculate()">=</button>
+          <button title="calculate">=</button>
           <button onclick="clearDisplay()" class="operator-btn">
             C
           </button>
@@ -49,14 +49,8 @@
       </div>
     </div>
     <script type="module">
-      // import the functions from the app.js file
-      // like "enterDigit" and "calculate"
-      // and set them as properties of the window object
-      // so we can still use them as global handlers
-      // in the "onclick" attribute of the buttons
-      import { enterDigit, calculate, clearDisplay } from './app.js'
+      import { enterDigit, clearDisplay } from './app.js'
       window.enterDigit = enterDigit
-      window.calculate = calculate
       window.clearDisplay = clearDisplay
     </script>
   </body>
