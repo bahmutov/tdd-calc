@@ -148,4 +148,14 @@ describe('Calculator', () => {
     cy.contains('#buttons button', 'C').click()
     cy.get('#display').should('have.text', '')
   })
+
+  it('does not use global enterDigit', () => {
+    cy.visit('public/index.html')
+    // the "1" button should not have an "onclick" attribute
+    //
+    // the window object should not have an "enterDigit" property
+    //
+    // confirm the calculator still enters entire expressions
+    // with every digit and operator present
+  })
 })
