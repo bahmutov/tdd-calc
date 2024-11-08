@@ -37,7 +37,7 @@
           <button onclick="enterDigit(0)">0</button>
           <button onclick="enterDigit('.')">.</button>
           <button title="calculate">=</button>
-          <button onclick="clearDisplay()" class="operator-btn">
+          <button title="clear display" class="operator-btn">
             C
           </button>
         </div>
@@ -49,9 +49,8 @@
       </div>
     </div>
     <script type="module">
-      import { enterDigit, clearDisplay } from './app.js'
+      import { enterDigit } from './app.js'
       window.enterDigit = enterDigit
-      window.clearDisplay = clearDisplay
     </script>
   </body>
 </html>

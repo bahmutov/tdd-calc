@@ -127,13 +127,17 @@ function calculate() {
 /**
  * Clears the current display text
  */
-export function clearDisplay() {
+function clearDisplay() {
   const display = document.getElementById('display')
   display.innerText = ''
 }
 
 // attach event handlers
 // - button calculate should call the calculate function
+// - button clear should call the clearDisplay function
 document
   .querySelector('#buttons button[title=calculate]')
   .addEventListener('click', calculate)
+document
+  .querySelector('#buttons button[title="clear display"]')
+  .addEventListener('click', clearDisplay)
