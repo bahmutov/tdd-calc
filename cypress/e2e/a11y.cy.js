@@ -29,6 +29,14 @@ describe('Calculator', { defaultCommandTimeout: 15_000 }, () => {
     //     },
     //   },
     // },
-    cy.checkAccessibility()
+    cy.checkAccessibility(null, {
+      checks: {
+        'color-contrast': {
+          options: {
+            ignoreLength: true,
+          },
+        },
+      },
+    })
   })
 })

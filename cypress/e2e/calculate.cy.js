@@ -118,4 +118,13 @@ describe('Calculator', () => {
         history: [],
       })
   })
+
+  it('does not use global calculate', () => {
+    cy.visit('public/index.html')
+    // the "=" button should not have an "onclick" attribute
+    //
+    // the window object should not have a "calculate" property
+    //
+    // confirm the calculator still calculates
+  })
 })
