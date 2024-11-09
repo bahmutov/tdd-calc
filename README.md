@@ -71,6 +71,10 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `e5`   | [Lesson e5: Print page as PDF](https://cypress.tips/courses/tdd-calculator/lessons/e5)                           |
 | `e6`   | [Lesson e6: Catch accessibility issues](https://cypress.tips/courses/tdd-calculator/lessons/e6)                  |
 | `e7`   | [Lesson e7: Button color contrast](https://cypress.tips/courses/tdd-calculator/lessons/e7)                       |
+| `f1`   | [Lesson f1: Remove the global calculate function](https://cypress.tips/courses/tdd-calculator/lessons/f1)        |
+| `f2`   | [Lesson f2: Remove the global clear display function](https://cypress.tips/courses/tdd-calculator/lessons/f2)    |
+| `f3`   | [Lesson f3: Remove the global enterDigit function](https://cypress.tips/courses/tdd-calculator/lessons/f3)       |
+| `f4`   | [Lesson f4: Use TypeScript for specs](https://cypress.tips/courses/tdd-calculator/lessons/f4)                    |
 
 ## Small print
 
