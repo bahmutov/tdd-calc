@@ -60,7 +60,7 @@ const historyListElement = document.getElementById('history-list')
  * Function that receives a digit to append to the currently displayed text
  * @param {number|'+'|'-'|'*'|'/'} digit A single digit to append to the display text
  */
-export function enterDigit(digit) {
+function enterDigit(digit) {
   const display = document.getElementById('display')
 
   if (digit === '.') {
@@ -135,9 +135,19 @@ function clearDisplay() {
 // attach event handlers
 // - button calculate should call the calculate function
 // - button clear should call the clearDisplay function
+// - all digit buttons should call the enterDigit function
 document
   .querySelector('#buttons button[title=calculate]')
   .addEventListener('click', calculate)
 document
   .querySelector('#buttons button[title="clear display"]')
   .addEventListener('click', clearDisplay)
+document
+  .querySelectorAll('#buttons button[title="enter digit"]')
+  .forEach((button) => {
+    button.addEventListener('click', (e) => {
+      // get the character from the event target
+      const digit = e.target.innerText
+      enterDigit(digit)
+    })
+  })

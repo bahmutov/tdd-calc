@@ -13,29 +13,27 @@
       <div id="left-column">
         <div id="display"></div>
         <div id="buttons">
-          <button onclick="enterDigit('+')" class="operator-btn">
-            +
-          </button>
-          <button onclick="enterDigit(7)">7</button>
-          <button onclick="enterDigit(8)">8</button>
-          <button onclick="enterDigit(9)">9</button>
-          <button onclick="enterDigit('-')" class="operator-btn">
+          <button class="operator-btn" title="enter digit">+</button>
+          <button title="enter digit">7</button>
+          <button title="enter digit">8</button>
+          <button title="enter digit">9</button>
+          <button title="enter digit"" class="operator-btn">
             -
           </button>
-          <button onclick="enterDigit(4)">4</button>
-          <button onclick="enterDigit(5)">5</button>
-          <button onclick="enterDigit(6)">6</button>
-          <button onclick="enterDigit('*')" class="operator-btn">
+          <button title="enter digit">4</button>
+          <button title="enter digit">5</button>
+          <button title="enter digit">6</button>
+          <button title="enter digit" class="operator-btn">
             *
           </button>
-          <button onclick="enterDigit(1)">1</button>
-          <button onclick="enterDigit(2)">2</button>
-          <button onclick="enterDigit(3)">3</button>
-          <button onclick="enterDigit('/')" class="operator-btn">
+          <button title="enter digit">1</button>
+          <button title="enter digit">2</button>
+          <button title="enter digit">3</button>
+          <button title="enter digit" class="operator-btn">
             /
           </button>
-          <button onclick="enterDigit(0)">0</button>
-          <button onclick="enterDigit('.')">.</button>
+          <button title="enter digit">0</button>
+          <button title="enter digit">.</button>
           <button title="calculate">=</button>
           <button title="clear display" class="operator-btn">
             C
@@ -48,9 +46,6 @@
         </div>
       </div>
     </div>
-    <script type="module">
-      import { enterDigit } from './app.js'
-      window.enterDigit = enterDigit
-    </script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
