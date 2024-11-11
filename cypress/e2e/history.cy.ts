@@ -45,7 +45,6 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      // @ts-ignore
       .then(JSON.parse)
       .should('deep.equal', {
         version: 'v2',
@@ -100,7 +99,6 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      // @ts-ignore
       .then(JSON.parse)
       .should('deep.equal', {
         version: 'v2',
@@ -135,7 +133,6 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      // @ts-ignore
       .then(JSON.parse)
       .should('deep.equal', {
         version: 'v2',

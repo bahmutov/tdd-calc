@@ -78,7 +78,6 @@ describe('Calculator buttons', () => {
       // to a number first, then use "closeTo" assertion
       // https://glebbahmutov.com/cypress-examples/recipes/same-height.html
       .should('have.css', 'width')
-      // @ts-ignore
       .then(parseFloat)
       .should('be.closeTo', 100, 0.1)
     // next, check the height CSS property
@@ -86,7 +85,6 @@ describe('Calculator buttons', () => {
     cy.get('#buttons button')
       .first()
       .should('have.css', 'height')
-      // @ts-ignore
       .then(parseFloat)
       .should('be.closeTo', 100, 0.1)
     // confirm the buttons are round
@@ -145,7 +143,6 @@ describe('Calculator buttons', () => {
       cy.contains('#buttons button', operator)
         .should('have.class', 'operator-btn')
         .and('have.css', 'background-color')
-        // @ts-ignore
         .then<RGB>(parseColor)
         .should((color: RGB) => {
           expect(color.r, 'red').to.be.closeTo(orange.r, 2)
@@ -169,7 +166,6 @@ describe('Calculator buttons', () => {
       // in the Cypress Command Log column
       .should('be.a', 'string')
       // parse the color string into an object with "r", "g", "b" properties
-      // @ts-ignore
       .then<RGB>(parseColor)
       // and pass that object to the "cy.then" callback function
       .then((background: RGB) => {
@@ -182,7 +178,6 @@ describe('Calculator buttons', () => {
           // get the new background color and parse it
           .should('have.css', 'background-color')
           .should('be.a', 'string')
-          // @ts-ignore
           .then<RGB>(parseColor)
           // and compare the new color with the original color
           // each channel should be higher than the original
