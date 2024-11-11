@@ -4,17 +4,17 @@ export const CalculatorPage = {
   },
 
   /**
-   * @param {string} expression to enter into the calculator, like "1+2+3"
+   * @param expression to enter into the calculator, like "1+2+3"
    */
-  enterExpression(expression) {
+  enterExpression(expression: string) {
     cy.enterExpression(expression)
   },
 
   /**
-   * @param {string} expression to be evaluated, like "1+2"
-   * @param {string} expectedResult the expected result, like "3"
+   * @param expression to be evaluated, like "1+2"
+   * @param expectedResult the expected result, like "3"
    */
-  compute(expression, expectedResult) {
+  compute(expression: string, expectedResult: string) {
     cy.enterExpression(expression)
     cy.contains('#buttons button', '=', { log: false }).click({
       log: false,
@@ -32,9 +32,9 @@ export const CalculatorPage = {
   },
 
   /**
-   * @param {string[]} items list of history items to check
+   * @param items list of history items to check
    */
-  checkHistory(...items) {
+  checkHistory(...items: string[]) {
     cy.log(`**checking history with ${items.length} items**`)
     cy.get('#history li', { log: false }).should(
       'have.length',

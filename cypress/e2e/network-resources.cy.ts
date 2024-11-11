@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Calculator', () => {
   it('loads CSS and JS resources', () => {
     // set up a network spy on "styles.css"

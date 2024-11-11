@@ -1,6 +1,4 @@
-/// <reference types="cypress" />
-
-describe('Calculator', () => {
+describe('Calculator display', () => {
   it('shows entered numbers', () => {
     cy.visit('public/index.html')
     // type number "123" by clicking individual digits

@@ -4,7 +4,8 @@
   "description": "Build a simple HTML calculator using test-driven development",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "lint": "tsc --project ./cypress/tsconfig.json --noEmit"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "color-convert": "^2.0.1",
     "color-string": "^1.9.1",
     "cypress": "^13.15.1",
+    "cypress-cdp": "^1.6.13",
     "cypress-real-events": "^1.13.0",
     "cypress-watch-and-reload": "^1.10.16",
     "prettier": "^3.3.3",

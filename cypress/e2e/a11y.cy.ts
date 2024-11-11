@@ -11,6 +11,7 @@ describe('Calculator', { defaultCommandTimeout: 15_000 }, () => {
     // needs the text to be at least 2 characters
     CalculatorPage.compute('100+200', '300')
     // check accessibility after the computation
+    // @ts-ignore
     cy.checkAccessibility()
   })
 
@@ -29,6 +30,7 @@ describe('Calculator', { defaultCommandTimeout: 15_000 }, () => {
     //     },
     //   },
     // },
+    // @ts-ignore
     cy.checkAccessibility(null, {
       checks: {
         'color-contrast': {

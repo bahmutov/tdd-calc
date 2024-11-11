@@ -1,5 +1,6 @@
 // we can test complex logic written in a single function
 // by testing it in isolation without going through the UI
+// @ts-ignore
 import { appendDot } from '../../public/utils'
 
 describe('Calculator appendDot', () => {
