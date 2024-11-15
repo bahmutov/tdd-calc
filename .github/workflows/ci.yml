@@ -14,6 +14,7 @@ jobs:
         # use desktop Chrome browser to run the tests
         with:
           browser: chrome
+          build: npm run lint
       # save the downloaded PDF file
       - name: Save PDF artifact
         # https://github.com/actions/upload-artifact
