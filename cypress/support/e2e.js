@@ -6,6 +6,9 @@ require('cypress-watch-and-reload/support')
 // https://github.com/dmtrKovalenko/cypress-real-events
 require('cypress-real-events/support')
 
+// https://github.com/bahmutov/cypress-code-coverage
+require('@bahmutov/cypress-code-coverage/support')
+
 // create a new Cypress custom command
 // to enter an expression into the calculator
 // by clicking individual buttons

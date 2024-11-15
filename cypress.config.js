@@ -11,6 +11,11 @@ module.exports = defineConfig({
       'cypress-watch-and-reload': {
         watch: ['public/*'],
       },
+      // see the code coverage configuration options
+      // https://github.com/bahmutov/cypress-code-coverage
+      coverage: {
+        // intercept and instrument application's scripts
+      },
     },
     viewportHeight: 900,
     viewportWidth: 500,
@@ -25,8 +30,14 @@ module.exports = defineConfig({
       // add accessibility tasks
       addAccessibilityTasks(on)
 
+      // https://github.com/bahmutov/cypress-code-coverage
+      require('@bahmutov/cypress-code-coverage/plugin')(on, config)
+
       // https://github.com/bahmutov/cypress-watch-and-reload
-      return require('cypress-watch-and-reload/plugins')(on, config)
+      require('cypress-watch-and-reload/plugins')(on, config)
+
+      // IMPORTANT to return the config object
+      return config
     },
   },
 })
