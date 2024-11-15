@@ -33,5 +33,11 @@
     "prettier": "^3.3.3",
     "typescript": "^5.6.3",
     "wick-a11y": "^1.2.2"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ]
   }
 }
