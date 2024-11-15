@@ -110,7 +110,7 @@ describe('Calculator', () => {
       // it should be a string
       .should('be.a', 'string')
       // parse the string into an object
-      .then(JSON.parse)
+      .then((s) => JSON.parse(s as unknown as string))
       // and confirm the entire object has the expected data
       .should('deep.equal', {
         version: 'v2',

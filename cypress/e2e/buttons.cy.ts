@@ -78,14 +78,14 @@ describe('Calculator buttons', () => {
       // to a number first, then use "closeTo" assertion
       // https://glebbahmutov.com/cypress-examples/recipes/same-height.html
       .should('have.css', 'width')
-      .then(parseFloat)
+      .then((s) => parseFloat(s as unknown as string))
       .should('be.closeTo', 100, 0.1)
     // next, check the height CSS property
     cy.log('**height**')
     cy.get('#buttons button')
       .first()
       .should('have.css', 'height')
-      .then(parseFloat)
+      .then((s) => parseFloat(s as unknown as string))
       .should('be.closeTo', 100, 0.1)
     // confirm the buttons are round
     // by checking their border radius
@@ -143,8 +143,8 @@ describe('Calculator buttons', () => {
       cy.contains('#buttons button', operator)
         .should('have.class', 'operator-btn')
         .and('have.css', 'background-color')
-        .then<RGB>(parseColor)
-        .should((color: RGB) => {
+        .then((s) => parseColor(s as unknown as string))
+        .should((color) => {
           expect(color.r, 'red').to.be.closeTo(orange.r, 2)
           expect(color.g, 'green').to.be.closeTo(orange.g, 2)
           expect(color.b, 'blue').to.be.closeTo(orange.b, 2)
@@ -166,7 +166,7 @@ describe('Calculator buttons', () => {
       // in the Cypress Command Log column
       .should('be.a', 'string')
       // parse the color string into an object with "r", "g", "b" properties
-      .then<RGB>(parseColor)
+      .then((s) => parseColor(s as unknown as string))
       // and pass that object to the "cy.then" callback function
       .then((background: RGB) => {
         // get the aliased button element using the "exampleButton" alias
@@ -178,7 +178,7 @@ describe('Calculator buttons', () => {
           // get the new background color and parse it
           .should('have.css', 'background-color')
           .should('be.a', 'string')
-          .then<RGB>(parseColor)
+          .then((s) => parseColor(s as unknown as string))
           // and compare the new color with the original color
           // each channel should be higher than the original
           // because the color is getting lighter

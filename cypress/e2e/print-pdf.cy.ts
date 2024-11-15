@@ -15,19 +15,19 @@ it(
       .then(() => {
         // before printing the browser window into PDF
         // remove the Cypress UI leaving just the app contents
-        window.top.document
+        window.top?.document
           .querySelector('#spec-runner-header')
-          .remove()
-        window.top.document
+          ?.remove()
+        window.top?.document
           .querySelector('[data-cy="reporter-panel"]')
-          .remove()
+          ?.remove()
 
         // only if we are using "cypress open"
         // it shows the specs widget
         if (Cypress.browser.isHeaded) {
-          window.top.document
+          window.top?.document
             .querySelector('[data-cy="sidebar"]')
-            .remove()
+            ?.remove()
         }
       })
 

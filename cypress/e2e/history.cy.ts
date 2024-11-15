@@ -45,7 +45,7 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      .then(JSON.parse)
+      .then((s) => parseFloat(s as unknown as string))
       .should('deep.equal', {
         version: 'v2',
         expression: '12',
@@ -99,7 +99,7 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      .then(JSON.parse)
+      .then((s) => parseFloat(s as unknown as string))
       .should('deep.equal', {
         version: 'v2',
         expression: '12',
@@ -133,7 +133,7 @@ describe('History', { viewportWidth: 1000 }, () => {
       .its('localStorage')
       .invoke('getItem', 'calculator_data')
       .should('be.a', 'string')
-      .then(JSON.parse)
+      .then((s) => parseFloat(s as unknown as string))
       .should('deep.equal', {
         version: 'v2',
         expression: '0',
