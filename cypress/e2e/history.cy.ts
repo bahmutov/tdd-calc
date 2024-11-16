@@ -140,4 +140,40 @@ describe('History', { viewportWidth: 1000 }, () => {
         history: ['1+2+3=6', '3-4=-1', '0+0=0'],
       })
   })
+
+  context('v1', () => {
+    it('handles missing expression', () => {
+      // set the local storage to the "v1" format
+      // but without the expression property
+      CalculatorPage.visit()
+      // confirm the display is empty
+    })
+  })
+
+  context('unknown version', () => {
+    it('handles wrong version', () => {
+      // set the local storage to the "unknown" format
+      // with some expression
+      CalculatorPage.visit()
+      // confirm the display is empty, it should not be restored
+    })
+  })
+
+  context('v2', () => {
+    it('handles missing expression', () => {
+      // set the local storage to v2 format
+      // but without the expression property
+      CalculatorPage.visit()
+      // confirm the display is empty
+      // confirm the history is restored correctly
+    })
+
+    it('handles non-array history', () => {
+      // set the local storage to v2 format
+      // but with the history property not an array
+      CalculatorPage.visit()
+      // confirm the display is restored correctly
+      // confirm the history is empty
+    })
+  })
 })
