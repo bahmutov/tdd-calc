@@ -75,6 +75,9 @@ Then follow the lesson prompts from [the course](https://cypress.tips/courses/td
 | `f2`   | [Lesson f2: Remove the global clear display function](https://cypress.tips/courses/tdd-calculator/lessons/f2)    |
 | `f3`   | [Lesson f3: Remove the global enterDigit function](https://cypress.tips/courses/tdd-calculator/lessons/f3)       |
 | `f4`   | [Lesson f4: Use TypeScript for specs](https://cypress.tips/courses/tdd-calculator/lessons/f4)                    |
+| `f5`   | [Lesson f5: Fix TypeScript lint errors](https://cypress.tips/courses/tdd-calculator/lessons/f5)                  |
+| `f6`   | [Lesson f6: Code coverage](https://cypress.tips/courses/tdd-calculator/lessons/f6)                               |
+| `f7`   | [Lesson f7: 100% code coverage](https://cypress.tips/courses/tdd-calculator/lessons/f7)                          |
 
 ## Small print
 
