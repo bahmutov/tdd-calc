@@ -15,6 +15,7 @@ module.exports = defineConfig({
       // https://github.com/bahmutov/cypress-code-coverage
       coverage: {
         // intercept and instrument application's scripts
+        instrument: '**/public/*.js',
       },
     },
     viewportHeight: 900,
