@@ -234,10 +234,14 @@ describe('History', { viewportWidth: 1000 }, () => {
     // that is initially disabled
     // https://on.cypress.io/get
     // https://on.cypress.io/should
-    //
+    cy.get('button#copy-history')
+      .should('have.attr', 'title', 'Copy history to clipboard')
+      .and('be.disabled')
     // compute several expressions
     // to populate the history list
-    //
+    CalculatorPage.compute('1+2', '3').clear().compute('3*4', '12')
+    CalculatorPage.checkHistory('1+2=3', '3*4=12')
     // confirm the copy history button is enabled
+    cy.get('button#copy-history').should('be.enabled')
   })
 })

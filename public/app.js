@@ -29,7 +29,7 @@ try {
         'calculator_data',
         JSON.stringify(migratedData),
       )
-      // TODO: update the copy history button state
+      // update the copy history button state
       updateCopyHistory()
     }
   } else if (data.version === 'v2') {
@@ -49,7 +49,7 @@ try {
       history.length = 0
       history.push(...data.history)
     }
-    // TODO: update the copy history button state
+    // update the copy history button state
     updateCopyHistory()
   }
 } catch {
@@ -59,7 +59,7 @@ try {
 // we probably want to keep around the reference to the
 // LI element with ID "history-list" to append new history items
 const historyListElement = document.getElementById('history-list')
-// TODO: get the reference to the copy history button
+// get the reference to the copy history button
 const copyHistoryElement = document.getElementById('copy-history')
 
 /**
@@ -120,7 +120,7 @@ function calculate() {
   historyListElement.innerHTML += `<li>${historyItem}</li>`
   // store the history in the localStorage
   history.push(historyItem)
-  // TODO: update the copy history button state
+  // update the copy history button state
   updateCopyHistory()
 
   // store the current expression in the localStorage
@@ -141,7 +141,7 @@ function clearDisplay() {
 }
 
 function updateCopyHistory() {
-  // TODO: if the history is empty, disable the button
+  // if the history is empty, disable the button
   // otherwise enable it
   // Tip: if you have a DOM element reference, you
   // can simply set its `disabled` property to true or false
