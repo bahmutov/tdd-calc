@@ -145,8 +145,19 @@ describe('History', { viewportWidth: 1000 }, () => {
     it('handles missing expression', () => {
       // set the local storage to the "v1" format
       // but without the expression property
+      cy.window()
+        .its('localStorage')
+        .invoke(
+          'setItem',
+          'calculator_data',
+          JSON.stringify({
+            version: 'v1',
+          }),
+        )
+
       CalculatorPage.visit()
       // confirm the display is empty
+      cy.get('#display').should('have.text', '')
     })
   })
 
@@ -154,8 +165,20 @@ describe('History', { viewportWidth: 1000 }, () => {
     it('handles wrong version', () => {
       // set the local storage to the "unknown" format
       // with some expression
+      cy.window()
+        .its('localStorage')
+        .invoke(
+          'setItem',
+          'calculator_data',
+          JSON.stringify({
+            version: 'unknown',
+            expression: '1234',
+          }),
+        )
+
       CalculatorPage.visit()
       // confirm the display is empty, it should not be restored
+      cy.get('#display').should('have.text', '')
     })
   })
 
@@ -163,17 +186,44 @@ describe('History', { viewportWidth: 1000 }, () => {
     it('handles missing expression', () => {
       // set the local storage to v2 format
       // but without the expression property
+      cy.window()
+        .its('localStorage')
+        .invoke(
+          'setItem',
+          'calculator_data',
+          JSON.stringify({
+            version: 'v2',
+            history: ['1+2+3=6', '3-4=-1'],
+          }),
+        )
+
       CalculatorPage.visit()
       // confirm the display is empty
+      cy.get('#display').should('have.text', '')
       // confirm the history is restored correctly
+      CalculatorPage.checkHistory('1+2+3=6', '3-4=-1')
     })
 
     it('handles non-array history', () => {
       // set the local storage to v2 format
       // but with the history property not an array
+      cy.window()
+        .its('localStorage')
+        .invoke(
+          'setItem',
+          'calculator_data',
+          JSON.stringify({
+            version: 'v2',
+            expression: '1234',
+            history: '1+2+3=6',
+          }),
+        )
+
       CalculatorPage.visit()
       // confirm the display is restored correctly
+      cy.get('#display').should('have.text', '1234')
       // confirm the history is empty
+      CalculatorPage.checkHistory()
     })
   })
 })
