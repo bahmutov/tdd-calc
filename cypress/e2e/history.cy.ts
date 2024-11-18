@@ -226,4 +226,18 @@ describe('History', { viewportWidth: 1000 }, () => {
       CalculatorPage.checkHistory()
     })
   })
+
+  it('copies the history to the clipboard', () => {
+    cy.visit('public/index.html')
+    // confirm there is a copy history button
+    // with the title "Copy history to clipboard"
+    // that is initially disabled
+    // https://on.cypress.io/get
+    // https://on.cypress.io/should
+    //
+    // compute several expressions
+    // to populate the history list
+    //
+    // confirm the copy history button is enabled
+  })
 })
