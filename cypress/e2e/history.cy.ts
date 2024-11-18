@@ -241,7 +241,18 @@ describe('History', { viewportWidth: 1000 }, () => {
     // to populate the history list
     CalculatorPage.compute('1+2', '3').clear().compute('3*4', '12')
     CalculatorPage.checkHistory('1+2=3', '3*4=12')
+    // get the clipboard object from the browser
+    // (under window.navigator.clipboard)
+    // and set up a spy on the method "writeText"
+    // give the alias an alias "writeText"
+    // https://on.cypress.io/window
+    // https://on.cypress.io/its
+    // https://on.cypress.io/spy
+    // https://on.cypress.io/as
+    // https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html
+    //
     // confirm the copy history button is enabled
-    cy.get('button#copy-history').should('be.enabled')
+    // and click on the button
+    // confirm the clipboard spy alias was called with the correct text
   })
 })

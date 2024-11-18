@@ -171,3 +171,9 @@ document
       enterDigit(digit)
     })
   })
+copyHistoryElement.addEventListener('click', async () => {
+  // create a single text string from the history array
+  //
+  // use the Clipboard API to copy the text to the clipboard
+  // if the operation fails, log the error to the console
+})
