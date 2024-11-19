@@ -7,7 +7,11 @@ it('collects code coverage on the fly', () => {
   // There should be two keys: one for the main script and one for the spec
   cy.window()
     .should('have.property', '__coverage__')
-    .should('have.keys', ['public/app.js', 'public/utils.js'])
+    .should('have.keys', [
+      'public/app.js',
+      'public/db.js',
+      'public/utils.js',
+    ])
 
   // compute an expression and see the increased code coverage
   CalculatorPage.compute('1+2.1', '3.1')
