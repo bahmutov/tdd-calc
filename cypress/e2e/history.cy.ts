@@ -306,4 +306,15 @@ describe('History', { viewportWidth: 1000 }, () => {
       'Clipboard write failed',
     )
   })
+
+  it('handles serialization error', () => {
+    // set the local storage to a string that is not a valid JSON
+    // under the key "calculator_data"
+    cy.visit('public/index.html')
+    // confirm the application automatically saves
+    // default v2 data to the local storage
+    //  - version v2
+    //  - empty expression
+    //  - empty history
+  })
 })
