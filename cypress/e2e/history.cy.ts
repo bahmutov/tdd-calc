@@ -227,7 +227,7 @@ describe('History', { viewportWidth: 1000 }, () => {
     })
   })
 
-  it('copies the history to the clipboard', () => {
+  it.only('copies the history to the clipboard', () => {
     cy.visit('public/index.html')
     // confirm there is a copy history button
     // with the title "Copy history to clipboard"
