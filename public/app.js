@@ -31,21 +31,50 @@ function saveData(data) {}
 // the current list of history entries
 const history = []
 
-// on page visit
-// load the data and update the display and history elements
 try {
-  const data = loadData()
-  document.getElementById('display').innerText = data.expression
-  if (Array.isArray(data.history)) {
-    const historyListElement = document.getElementById('history-list')
-    historyListElement.innerHTML = data.history
-      .map((item) => `<li>${item}</li>`)
-      .join('\n')
-    history.length = 0
-    history.push(...data.history)
+  const data = JSON.parse(localStorage.getItem('calculator_data'))
+  if (data.version === 'v1') {
+    const lastExpression = data.expression
+    if (lastExpression) {
+      document.getElementById('display').innerText = lastExpression
+      // push the last expression to the history
+      const historyListElement =
+        document.getElementById('history-list')
+      historyListElement.innerHTML = `<li>${lastExpression}=${lastExpression}</li>`
+      history.push(`${lastExpression}=${lastExpression}`)
+      // save the migrated data into the localStorage
+      const migratedData = {
+        version: 'v2',
+        expression: lastExpression,
+        history,
+      }
+      localStorage.setItem(
+        'calculator_data',
+        JSON.stringify(migratedData),
+      )
+      // update the copy history button state
+      updateCopyHistory()
+    }
+  } else if (data.version === 'v2') {
+    // set the DOM elements based on the data stored in the item
+    // - expression
+    // - history items
+    const lastExpression = data.expression
+    if (lastExpression) {
+      document.getElementById('display').innerText = lastExpression
+    }
+    if (Array.isArray(data.history)) {
+      const historyListElement =
+        document.getElementById('history-list')
+      historyListElement.innerHTML = data.history
+        .map((item) => `<li>${item}</li>`)
+        .join('\n')
+      history.length = 0
+      history.push(...data.history)
+    }
+    // update the copy history button state
+    updateCopyHistory()
   }
-  // update the copy history button state
-  updateCopyHistory()
 } catch {
   // ignore serialization errors
 }
@@ -76,7 +105,7 @@ function enterDigit(digit) {
     expression: display.innerText,
     history,
   }
-  saveData(data)
+  localStorage.setItem('calculator_data', JSON.stringify(data))
 }
 
 /**
@@ -123,7 +152,7 @@ function calculate() {
     expression: display.innerText,
     history,
   }
-  saveData(data)
+  localStorage.setItem('calculator_data', JSON.stringify(data))
 }
 
 /**
