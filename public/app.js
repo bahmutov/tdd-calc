@@ -173,7 +173,12 @@ document
   })
 copyHistoryElement.addEventListener('click', async () => {
   // create a single text string from the history array
-  //
+  const text = history.join('\n')
   // use the Clipboard API to copy the text to the clipboard
   // if the operation fails, log the error to the console
+  try {
+    await navigator.clipboard.writeText(text)
+  } catch (err) {
+    console.error(err.name, err.message)
+  }
 })

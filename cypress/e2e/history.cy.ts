@@ -250,9 +250,18 @@ describe('History', { viewportWidth: 1000 }, () => {
     // https://on.cypress.io/spy
     // https://on.cypress.io/as
     // https://glebbahmutov.com/cypress-examples/commands/spies-stubs-clocks.html
-    //
+    cy.window()
+      .its('navigator.clipboard')
+      .then((clipboard: Clipboard) => {
+        cy.spy(clipboard, 'writeText').as('writeText')
+      })
     // confirm the copy history button is enabled
     // and click on the button
+    cy.get('button#copy-history').should('be.enabled').click()
     // confirm the clipboard spy alias was called with the correct text
+    cy.get('@writeText').should(
+      'have.been.calledOnceWithExactly',
+      '1+2=3\n3*4=12',
+    )
   })
 })
