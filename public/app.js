@@ -48,6 +48,7 @@ function loadData() {
     }
   } catch {
     // ignore serialization errors
+    saveData(defaultData)
     return defaultData
   }
 }
