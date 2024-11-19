@@ -227,7 +227,7 @@ describe('History', { viewportWidth: 1000 }, () => {
     })
   })
 
-  it.only('copies the history to the clipboard', () => {
+  it('copies the history to the clipboard', () => {
     cy.visit('public/index.html')
     // confirm there is a copy history button
     // with the title "Copy history to clipboard"
@@ -263,5 +263,32 @@ describe('History', { viewportWidth: 1000 }, () => {
       'have.been.calledOnceWithExactly',
       '1+2=3\n3*4=12',
     )
+  })
+
+  it('logs errors when copying to clipboard fails', () => {
+    cy.visit('public/index.html')
+    CalculatorPage.compute('1+2', '3')
+    CalculatorPage.checkHistory('1+2=3')
+    // spy on the "window.console.error" method
+    // and give it an alias "error"
+    // https://on.cypress.io/window
+    // https://on.cypress.io/its
+    // https://on.cypress.io/spy
+    // https://on.cypress.io/as
+    //
+    // stub the "navigator.clipboard.writeText" method
+    // and make it throw an error "Clipboard write failed"
+    // give the stub an alias "writeText"
+    // https://on.cypress.io/window
+    // https://on.cypress.io/its
+    // https://on.cypress.io/stub
+    // https://on.cypress.io/as
+    //
+    cy.get('button#copy-history').click()
+    // confirm the clipboard writeText stub was called
+    //
+    // confirm the console.error spy was called with the correct arguments
+    // - the name of the Error class
+    // - the message "Clipboard write failed"
   })
 })
