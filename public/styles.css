@@ -28,6 +28,7 @@ body {
   border: none;
   background-color: hsl(0, 0%, 20%);
   color: white;
+  /* color: hsl(0, 0%, 30%); */
 }
 
 #buttons {
@@ -90,6 +91,7 @@ button:active {
   flex-direction: column;
   font-size: 3rem;
   text-align: right;
+  position: relative;
 }
 
 #history-list {
@@ -101,6 +103,17 @@ button:active {
   padding: 10px;
   color: white;
   margin: 5px;
+}
+
+/* style the Copy history button */
+#history #copy-history {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+#history #copy-history:disabled {
+  background-color: hsl(0, 0%, 50%);
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 500px) {
