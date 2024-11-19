@@ -275,7 +275,11 @@ describe('History', { viewportWidth: 1000 }, () => {
     // https://on.cypress.io/its
     // https://on.cypress.io/spy
     // https://on.cypress.io/as
-    //
+    cy.window()
+      .its('console')
+      .then((console: Console) => {
+        cy.spy(console, 'error').as('error')
+      })
     // stub the "navigator.clipboard.writeText" method
     // and make it throw an error "Clipboard write failed"
     // give the stub an alias "writeText"
@@ -283,12 +287,23 @@ describe('History', { viewportWidth: 1000 }, () => {
     // https://on.cypress.io/its
     // https://on.cypress.io/stub
     // https://on.cypress.io/as
-    //
+    cy.window()
+      .its('navigator.clipboard')
+      .then((clipboard: Clipboard) => {
+        cy.stub(clipboard, 'writeText')
+          .as('writeText')
+          .throws(new Error('Clipboard write failed'))
+      })
     cy.get('button#copy-history').click()
     // confirm the clipboard writeText stub was called
-    //
+    cy.get('@writeText').should('have.been.called')
     // confirm the console.error spy was called with the correct arguments
     // - the name of the Error class
     // - the message "Clipboard write failed"
+    cy.get('@error').should(
+      'have.been.calledOnceWithExactly',
+      'Error',
+      'Clipboard write failed',
+    )
   })
 })
