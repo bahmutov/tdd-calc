@@ -6,6 +6,15 @@ import { loadData, saveData } from './db.js'
 // the current list of history entries
 const history = []
 
+/**
+ * The current language of the calculator
+ * @type {'EN'|'DE'}
+ */
+let language = 'EN'
+
+// TODO: on startup, determine the language based on the cookie
+// if the cookie includes the language=de, set the language to DE
+
 // on page visit
 // load the data and update the display and history elements
 try {
@@ -68,6 +77,8 @@ function calculate() {
   // we only allow the following characters
   // digits, "+", "-", "*", "/", "."
   if (!/^[\d\-\+\*\/\.]+?$/.test(expression)) {
+    // TODO: set the display text to "INVALID" in the current language
+    // Tip: in German, "invalid" is "ungültiger"
     display.innerText = 'INVALID'
     return
   }
@@ -76,6 +87,8 @@ function calculate() {
     const result = eval(expression)
     display.innerText = result
   } catch (err) {
+    // TODO: set the display text to "ERROR" in the current language
+    // Tip: in German, "error" is "fehler"
     display.innerText = 'ERROR'
     // after 1 second, put the original
     // expression back in the display
