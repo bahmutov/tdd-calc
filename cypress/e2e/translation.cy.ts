@@ -17,4 +17,18 @@ describe('Calculator', () => {
     cy.log('**switches to + after a 1s pause**')
     cy.get('#display', { timeout: 1100 }).should('have.text', '+')
   })
+
+  it('sets the language using the URL search parameter', () => {
+    // visit the page with the search parameter "lang=de"
+    // https://on.cypress.io/visit
+    //
+    // confirm the URL removes the search parameter
+    // https://on.cypress.io/location
+    // confirm the page sets the "language" cookie to "de"
+    // https://on.cypress.io/getcookie
+    //
+    // confirm the page is in German
+    // by pressing the "=" button and checking the display
+    // it should be showing the German word "UNGÜLTIGER"
+  })
 })
