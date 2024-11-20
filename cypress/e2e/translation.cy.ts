@@ -34,4 +34,19 @@ describe('Calculator', () => {
     cy.contains('button', '=').click()
     cy.get('#display').should('have.text', 'UNGÜLTIGER')
   })
+
+  it('uses language button to switch the language', () => {
+    cy.visit('public/index.html')
+    // the language button should show the "🇬🇧" emoji
+    // and have attribute "current-language" set to "EN"
+    // click on the language button
+    //
+    // the window should eventually reload and the app
+    // should set the cookie "language" to "de"
+    //
+    // the language button should now show the "🇩🇪" emoji
+    // and have the attribute "current-language" set to "DE"
+    // click on the language button
+    // the cookie language should now be "en"
+  })
 })
