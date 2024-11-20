@@ -339,13 +339,31 @@ describe('History', { viewportWidth: 1000 }, () => {
     // The fake "loadData" can return an arbitrary object
     // that can have non-array history property
     // https://on.cypress.io/intercept
-    // give the network intercept alias "db"
-    // https://on.cypress.io/as
+    cy.intercept('GET', '/public/db.js', {
+      headers: {
+        'content-type': 'application/javascript',
+      },
+      body: `
+      export function loadData() {
+        return {
+          version: 'v2',
+          expression: '12',
+          history: '',
+        }
+      }
+      export function saveData() {}
+    `,
+    })
+      // give the network intercept alias "db"
+      // https://on.cypress.io/as
+      .as('db')
     cy.visit('public/index.html')
     // confirm the network stub "db" was used
     // https://on.cypress.io/wait
-    //
+    cy.wait('@db')
     // the display should show text "12"
+    cy.get('#display').should('have.text', '12')
     // the history list should be empty
+    CalculatorPage.checkHistory()
   })
 })
