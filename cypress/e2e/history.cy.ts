@@ -330,4 +330,22 @@ describe('History', { viewportWidth: 1000 }, () => {
         history: [],
       })
   })
+
+  it('handles non-array history', () => {
+    // how do we return invalid data from "loadData"?
+    // we could simply overwrite the "/public/db.js" source code
+    // by using cy.intercept GET command. We can return
+    // fake source code with "loadData" and "saveData" functions
+    // The fake "loadData" can return an arbitrary object
+    // that can have non-array history property
+    // https://on.cypress.io/intercept
+    // give the network intercept alias "db"
+    // https://on.cypress.io/as
+    cy.visit('public/index.html')
+    // confirm the network stub "db" was used
+    // https://on.cypress.io/wait
+    //
+    // the display should show text "12"
+    // the history list should be empty
+  })
 })
