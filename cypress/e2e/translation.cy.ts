@@ -21,14 +21,17 @@ describe('Calculator', () => {
   it('sets the language using the URL search parameter', () => {
     // visit the page with the search parameter "lang=de"
     // https://on.cypress.io/visit
-    //
+    cy.visit('public/index.html?lang=de')
     // confirm the URL removes the search parameter
     // https://on.cypress.io/location
+    cy.location('search').should('equal', '')
     // confirm the page sets the "language" cookie to "de"
     // https://on.cypress.io/getcookie
-    //
+    cy.getCookie('language').its('value').should('equal', 'de')
     // confirm the page is in German
     // by pressing the "=" button and checking the display
     // it should be showing the German word "UNGÜLTIGER"
+    cy.contains('button', '=').click()
+    cy.get('#display').should('have.text', 'UNGÜLTIGER')
   })
 })

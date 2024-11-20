@@ -6,11 +6,18 @@ import { loadData, saveData } from './db.js'
 // the current list of history entries
 const history = []
 
-// TODO: look at the window URL search parameters
+// look at the window URL search parameters
 // and if there is "lang" parameter, set the language to the value
 // by setting the "language" cookie and reloading the page
+const url = new URL(window.location)
+const lang = url.searchParams.get('lang')
 // only set the cookie if the language is "en" or "de"
-// reload the page after removing the "lang" parameter
+if (lang && ['en', 'de'].includes(lang.toLowerCase())) {
+  document.cookie = `language=${lang}`
+  // reload the page after removing the "lang" parameter
+  url.searchParams.delete('lang')
+  window.location = url.toString()
+}
 
 /**
  * The current language of the calculator
