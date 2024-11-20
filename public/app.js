@@ -14,6 +14,9 @@ let language = 'EN'
 
 // TODO: on startup, determine the language based on the cookie
 // if the cookie includes the language=de, set the language to DE
+if (document.cookie.includes('language=de')) {
+  language = 'DE'
+}
 
 // on page visit
 // load the data and update the display and history elements
@@ -79,7 +82,7 @@ function calculate() {
   if (!/^[\d\-\+\*\/\.]+?$/.test(expression)) {
     // TODO: set the display text to "INVALID" in the current language
     // Tip: in German, "invalid" is "ungültiger"
-    display.innerText = 'INVALID'
+    display.innerText = language === 'DE' ? 'UNGÜLTIGER' : 'INVALID'
     return
   }
 
@@ -89,7 +92,7 @@ function calculate() {
   } catch (err) {
     // TODO: set the display text to "ERROR" in the current language
     // Tip: in German, "error" is "fehler"
-    display.innerText = 'ERROR'
+    display.innerText = language === 'DE' ? 'FEHLER' : 'ERROR'
     // after 1 second, put the original
     // expression back in the display
     setTimeout(() => {
