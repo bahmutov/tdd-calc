@@ -56,4 +56,20 @@ describe('Calculator', () => {
     // the cookie language should now be "en"
     cy.getCookie('language').its('value').should('equal', 'en')
   })
+
+  it('reloads the page twice on language switch', () => {
+    cy.visit('public/index.html')
+    // keep track of how many times the page has loaded
+    // by listening to the "window:load" event
+    // Tip: see "Catalog of Events" in the docs
+    // https://on.cypress.io/api
+    //
+    // click on the "🇬🇧" button
+    // https://on.cypress.io/contains
+    // https://on.cypress.io/click
+    //
+    // confirm the "🇩🇪" button is visible
+    // and then confirm the page has loaded twice
+    // by looking at your counter variable
+  })
 })
