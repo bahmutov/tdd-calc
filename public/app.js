@@ -56,13 +56,20 @@ const copyHistoryElement = document.getElementById('copy-history')
 // the language toggle button
 const languageElement = document.getElementById('language-flag')
 
-// TODO: update the language element on load:
+// update the language element on load:
 // if the current language is "DE",
 //  - set the text to "🇩🇪"
 //  - set the attribute "current-language" to "DE"
 // else
 //  - set the text  to "🇬🇧"
 //  - set the attribute "current-language" to "EN"
+if (language === 'DE') {
+  languageElement.innerText = '🇩🇪'
+  languageElement.setAttribute('current-language', 'DE')
+} else {
+  languageElement.innerText = '🇬🇧'
+  languageElement.setAttribute('current-language', 'EN')
+}
 
 /**
  * Function that receives a digit to append to the currently displayed text
@@ -185,7 +192,11 @@ copyHistoryElement.addEventListener('click', async () => {
   }
 })
 languageElement.addEventListener('click', () => {
-  // TODO: if the current language is "DE",
+  // if the current language is "DE",
   // then visit the page with "?lang=en"
   // else visit the page with "?lang=de"
+  const nextLanguage = language === 'EN' ? 'DE' : 'EN'
+  const newUrl =
+    window.location + '?lang=' + nextLanguage.toLocaleLowerCase()
+  window.location = newUrl
 })

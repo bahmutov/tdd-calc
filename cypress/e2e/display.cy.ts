@@ -37,15 +37,15 @@ describe('Calculator display', () => {
     cy.get('#display').should('have.text', '').and('be.visible')
     // enter an expression
     cy.enterExpression('1+2')
-    // and confirm the display font size is 80px
+    // and confirm the display font size is 60px
     // https://glebbahmutov.com/cypress-examples/recipes/check-style.html
-    cy.get('#display').should('have.css', 'fontSize', '80px')
+    cy.get('#display').should('have.css', 'fontSize', '60px')
   })
 
   it('has a grid of buttons', () => {
     cy.visit('public/index.html')
-    // confirm the calculator has 17 buttons
-    cy.get('#buttons button').should('have.length', 17)
+    // confirm the calculator has 17 buttons + 1 toggle language button
+    cy.get('#buttons button').should('have.length', 18)
     // how would you check that the buttons are arranged
     // in a grid? The grid should have 5 rows like this:
     // "+" 7 8 9

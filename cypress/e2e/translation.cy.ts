@@ -39,14 +39,21 @@ describe('Calculator', () => {
     cy.visit('public/index.html')
     // the language button should show the "🇬🇧" emoji
     // and have attribute "current-language" set to "EN"
-    // click on the language button
-    //
+    cy.contains('button', '🇬🇧')
+      .should('have.attr', 'current-language', 'EN')
+      // click on the language button
+      .click()
     // the window should eventually reload and the app
     // should set the cookie "language" to "de"
-    //
+    cy.getCookie('language').its('value').should('equal', 'de')
     // the language button should now show the "🇩🇪" emoji
     // and have the attribute "current-language" set to "DE"
-    // click on the language button
+    cy.contains('button', '🇩🇪')
+      .should('be.visible')
+      .and('have.attr', 'current-language', 'DE')
+      // click on the language button
+      .click()
     // the cookie language should now be "en"
+    cy.getCookie('language').its('value').should('equal', 'en')
   })
 })
