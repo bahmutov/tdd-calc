@@ -366,4 +366,39 @@ describe('History', { viewportWidth: 1000 }, () => {
     // the history list should be empty
     CalculatorPage.checkHistory()
   })
+
+  it('saves history by calling the saveData function', () => {
+    // intercept the GET request to "/public/db.js"
+    // and modify the source code for the "saveData" function
+    // to call a spy function with the data
+    // Tip: use req.continue to modify the response body
+    // https://on.cypress.io/intercept
+    // Tip: call the "window.__saveDataSpy" function
+    //
+    // we need the full source code,
+    // so remove all outgoing request headers
+    // the browser uses to cache the response
+    // "if-none-match" and "if-modified-since"
+    //
+    // give the network intercept alias "db"
+    // https://on.cypress.io/as
+    //
+    // visit the page and add to the "window" object
+    // a spy function "__saveDataSpy"
+    // https://on.cypress.io/visit
+    // https://on.cypress.io/spy
+    // give the spy an alias "saveData"
+    // https://on.cypress.io/as
+    //
+    // wait for the network request "db" to finish
+    // compute an expression, like "1+2"
+    //
+    // get the function alias "saveData"
+    // and confirm it was called once
+    // get the spy's first argument
+    // and confirm it is an object
+    //  - version "v2"
+    //  - expression "3"
+    //  - history ["1+2=3"]
+  })
 })

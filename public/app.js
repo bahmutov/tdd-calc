@@ -44,14 +44,6 @@ function enterDigit(digit) {
   } else {
     display.innerText += digit
   }
-
-  // store the current expression in the localStorage
-  const data = {
-    version: 'v2',
-    expression: display.innerText,
-    history,
-  }
-  saveData(data)
 }
 
 /**
